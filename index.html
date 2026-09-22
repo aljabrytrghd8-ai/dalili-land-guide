@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دليلي | دليل الأراضي في عُمان</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7f8f5;
+      color: #26352d;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e8e3;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+      background: #eef3ed;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #65736a;
+    }
+
+    .search-btn {
+      border: none;
+      padding: 15px 30px;
+      border-radius: 12px;
+      background: #26352d;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 45px 7%;
+    }
+
+    .section h2 {
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+
+    .filters {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d9ded9;
+      border-radius: 10px;
+      background: white;
+      font-size: 14px;
+    }
+
+    .filter-btn {
+      border: none;
+      border-radius: 10px;
+      background: #26352d;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .lands {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .land-card {
+      background: white;
+      padding: 22px;
+      border-radius: 16px;
+      border: 1px solid #e5e8e3;
+    }
+
+    .land-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .land-card p {
+      margin: 7px 0;
+      color: #65736a;
+    }
+
+    .score {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 7px 12px;
+      border-radius: 20px;
+      background: #eef3ed;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #26352d;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">دليلي</div>
+  <div>Oman Land Guide</div>
+</header>
+
+<section class="hero">
+  <h1>المكان يبدأ من دليلي</h1>
+  <p>ابحث عن الأرض المناسبة لك في عُمان بسهولة.</p>
+  <button class="search-btn" onclick="document.getElementById('search').scrollIntoView()">
+    ابحث عن أرضك
+  </button>
+</section>
+
+<section class="section" id="search">
+  <h2>ابحث عن أرضك</h2>
+
+  <div class="filters">
+
+    <select id="wilayat">
+      <option value="">الولاية</option>
+      <option value="السيب">السيب</option>
+      <option value="بوشر">بوشر</option>
+      <option value="نزوى">نزوى</option>
+      <option value="صور">صور</option>
+    </select>
+
+    <select id="type">
+      <option value="">نوع الأرض</option>
+      <option value="سكنية">سكنية</option>
+      <option value="تجارية">تجارية</option>
+      <option value="زراعية">زراعية</option>
+    </select>
+
+    <input id="maxPrice" type="number" placeholder="أعلى سعر">
+
+    <input id="minArea" type="number" placeholder="أقل مساحة">
+
+    <button class="filter-btn" onclick="filterLands()">
+      بحث
+    </button>
+
+  </div>
+
+  <div class="lands" id="lands"></div>
+</section>
+
+<footer>
+  © 2026 دليلي - Oman Land Guide
+</footer>
+
+<script>
+
+const lands = [
+  {
+    id: "D001",
+    location: "السيب / المعبيلة",
+    wilayat: "السيب",
+    price: 36000,
+    area: 600,
+    type: "سكنية",
+    score: 92
+  },
+  {
+    id: "D002",
+    location: "بوشر",
+    wilayat: "بوشر",
+    price: 55000,
+    area: 700,
+    type: "سكنية",
+    score: 88
+  },
+  {
+    id: "D003",
+    location: "نزوى",
+    wilayat: "نزوى",
+    price: 28000,
+    area: 1000,
+    type: "زراعية",
+    score: 84
+  }
+];
+
+function displayLands(data) {
+
+  const container = document.getElementById("lands");
+
+  if (data.length === 0) {
+    container.innerHTML = "<p>لم نعثر على أرض بهذه المواصفات.</p>";
+    return;
+  }
+
+  container.innerHTML = data.map(land => `
+    <div class="land-card">
+      <h3>${land.location}</h3>
+      <p>رقم الأرض: ${land.id}</p>
+      <p>السعر: ${land.price.toLocaleString()} ريال عماني</p>
+      <p>المساحة: ${land.area} م²</p>
+      <p>النوع: ${land.type}</p>
+      <span class="score">درجة دليلي: ${land.score}/100</span>
+    </div>
+  `).join("");
+}
+
+function filterLands() {
+
+  const wilayat = document.getElementById("wilayat").value;
+  const type = document.getElementById("type").value;
+  const maxPrice = Number(document.getElementById("maxPrice").value);
+  const minArea = Number(document.getElementById("minArea").value);
+
+  const filtered = lands.filter(land => {
+
+    return (!wilayat || land.wilayat === wilayat)
+      && (!type || land.type === type)
+      && (!maxPrice || land.price <= maxPrice)
+      && (!minArea || land.area >= minArea);
+
+  });
+
+  displayLands(filtered);
+}
+
+displayLands(lands);
+
+</script>
+
+</body>
+</html>
