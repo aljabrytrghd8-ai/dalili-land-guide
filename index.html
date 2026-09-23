@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>دليلي | Oman Land Guide</title>
 
 <style>
@@ -11,293 +10,945 @@
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:Arial,sans-serif;
+}
+
+:root{
+  --main:#173f3b;
+  --main2:#245b54;
+  --light:#eef5f3;
+  --gold:#c99b45;
+  --text:#243331;
+  --muted:#71807d;
+  --white:#ffffff;
+  --border:#dfe8e5;
+  --danger:#b94a48;
+  --shadow:0 12px 35px rgba(20,55,50,.10);
 }
 
 body{
-  background:#f5f7f4;
-  color:#26352d;
+  font-family:Tahoma,Arial,sans-serif;
+  background:#f7faf9;
+  color:var(--text);
   line-height:1.7;
 }
 
-header{
-  background:white;
-  padding:18px 7%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid #e1e6e1;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.logo{
-  font-size:29px;
-  font-weight:bold;
-}
-
-.nav{
-  display:flex;
-  gap:18px;
-  align-items:center;
-}
-
-.nav a{
-  text-decoration:none;
-  color:#26352d;
-  font-weight:bold;
-}
-
-.hero{
-  text-align:center;
-  padding:70px 20px;
-  background:#eaf0e9;
-}
-
-.hero h1{
-  font-size:43px;
-  margin-bottom:12px;
-}
-
-.hero p{
-  font-size:18px;
-  color:#65736a;
-  margin-bottom:25px;
-}
-
-.btn{
-  border:0;
-  border-radius:12px;
-  background:#26352d;
-  color:white;
-  padding:13px 24px;
-  font-size:16px;
-  cursor:pointer;
-}
-
-.btn-light{
-  background:#eaf0e9;
-  color:#26352d;
-}
-
-.section{
-  padding:45px 7%;
-}
-
-.section h2{
-  font-size:29px;
-  margin-bottom:24px;
-}
-
-.filters{
-  background:white;
-  padding:25px;
-  border-radius:18px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-  gap:13px;
-  box-shadow:0 5px 20px #0000000b;
-}
-
-label{
-  font-size:13px;
-  font-weight:bold;
-  display:block;
-  margin-bottom:5px;
-}
-
+button,
 input,
 select,
 textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid #d7ddd7;
-  border-radius:10px;
-  background:white;
-  font-size:14px;
+  font-family:inherit;
 }
 
-textarea{
-  min-height:100px;
-  resize:vertical;
+button{
+  cursor:pointer;
 }
 
-.filter-buttons{
-  grid-column:1/-1;
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
+
+header{
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(12px);
+}
+
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  min-height:78px;
+  padding:12px 20px;
   display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:5px;
-}
-
-.lands{
-  margin-top:30px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(285px,1fr));
-  gap:22px;
-}
-
-.land-card{
-  background:white;
-  border-radius:20px;
-  overflow:hidden;
-  border:1px solid #e2e7e2;
-  box-shadow:0 6px 20px #0000000c;
-  transition:0.2s;
-}
-
-.land-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px #00000014;
-}
-
-.land-top{
-  background:#eaf0e9;
-  padding:20px;
-}
-
-.land-top h3{
-  font-size:21px;
-  margin-bottom:5px;
-}
-
-.land-body{
-  padding:20px;
-}
-
-.info{
-  display:flex;
+  align-items:center;
   justify-content:space-between;
-  padding:7px 0;
-  border-bottom:1px solid #eef1ee;
+  gap:20px;
 }
 
-.info:last-of-type{
-  border-bottom:0;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.info span:first-child{
-  color:#6b776f;
-}
-
-.score{
-  display:inline-block;
-  margin-top:13px;
-  padding:6px 13px;
-  border-radius:20px;
-  background:#eaf0e9;
+.logo-mark{
+  width:45px;
+  height:45px;
+  border-radius:14px;
+  background:var(--main);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
   font-weight:bold;
 }
 
-.area-description{
-  margin-top:13px;
-  color:#65736a;
-  font-size:14px;
+.logo-text strong{
+  display:block;
+  font-size:22px;
+  color:var(--main);
 }
 
-.card-buttons{
+.logo-text span{
+  display:block;
+  color:#8a9895;
+  font-size:11px;
+  direction:ltr;
+  text-align:right;
+}
+
+.nav-actions{
   display:flex;
-  gap:8px;
-  margin-top:16px;
+  gap:9px;
+  align-items:center;
+  flex-wrap:wrap;
 }
 
-.card-buttons button{
-  flex:1;
-}
-
-.empty{
-  padding:30px;
-  text-align:center;
+.nav-btn{
+  border:1px solid var(--border);
   background:white;
-  border-radius:16px;
-  grid-column:1/-1;
-}
-
-.add-box{
-  background:white;
-  padding:28px;
-  border-radius:20px;
-  box-shadow:0 5px 20px #0000000b;
-}
-
-.notice{
-  background:#fff8df;
-  border:1px solid #eadb9c;
-  padding:15px;
+  color:var(--main);
+  padding:10px 15px;
   border-radius:12px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.nav-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow);
+}
+
+.nav-btn.primary{
+  background:var(--main);
+  color:white;
+  border-color:var(--main);
+}
+
+/* HERO */
+
+.hero{
+  min-height:430px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(90deg,rgba(12,45,41,.93),rgba(12,45,41,.67),rgba(12,45,41,.30)),
+    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=80")
+    center/cover;
+}
+
+.hero-content{
+  max-width:1200px;
+  width:100%;
+  margin:auto;
+  padding:70px 25px;
+  color:white;
+}
+
+.hero-content small{
+  display:inline-block;
+  padding:7px 13px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:30px;
+  background:rgba(255,255,255,.08);
   margin-bottom:20px;
 }
 
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
+.hero h1{
+  font-size:48px;
+  margin-bottom:12px;
+  line-height:1.25;
 }
 
-.full{
-  grid-column:1/-1;
+.hero p{
+  font-size:20px;
+  max-width:620px;
+  color:#edf7f5;
 }
 
-.status-box{
-  margin-top:20px;
-  padding:15px;
-  border-radius:12px;
-  background:#eef3ed;
-  display:none;
+/* MAIN */
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:45px 20px;
 }
 
-.admin{
-  background:#eef1f5;
+.section-title{
+  margin-bottom:22px;
 }
 
-.requests{
-  display:grid;
-  gap:15px;
-  margin-top:20px;
+.section-title h2{
+  color:var(--main);
+  font-size:28px;
 }
 
-.request{
+.section-title p{
+  color:var(--muted);
+  margin-top:5px;
+}
+
+/* SEARCH */
+
+.search-box{
   background:white;
-  padding:20px;
-  border-radius:16px;
-  border:1px solid #e1e5e1;
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:25px;
+  box-shadow:var(--shadow);
+  margin-top:-35px;
+  position:relative;
+  z-index:5;
 }
 
-.request-buttons{
+.filters{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.field label{
+  display:block;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:6px;
+  color:#52625f;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid var(--border);
+  border-radius:11px;
+  outline:none;
+  background:#fbfdfc;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--main2);
+  box-shadow:0 0 0 3px rgba(36,91,84,.08);
+}
+
+.filter-actions{
+  margin-top:18px;
   display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.btn{
+  border:none;
+  padding:11px 17px;
+  border-radius:11px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-main{
+  background:var(--main);
+  color:white;
+}
+
+.btn-light{
+  background:var(--light);
+  color:var(--main);
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:white;
+}
+
+.btn-danger{
+  background:#fff0ef;
+  color:var(--danger);
+}
+
+/* QUICK FEATURES */
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin:35px 0;
+}
+
+.quick-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  text-align:center;
+  box-shadow:0 7px 20px rgba(20,55,50,.05);
+}
+
+.quick-card .icon{
+  width:48px;
+  height:48px;
+  margin:0 auto 10px;
+  border-radius:15px;
+  background:var(--light);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+}
+
+.quick-card h3{
+  color:var(--main);
+  font-size:17px;
+}
+
+.quick-card p{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:4px;
+}
+
+/* RESULTS */
+
+.results-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin:35px 0 18px;
+}
+
+.results-count{
+  color:var(--muted);
+}
+
+.sort-select{
+  padding:10px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:white;
+}
+
+.lands-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+/* LAND CARD */
+
+.land-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 8px 25px rgba(20,55,50,.06);
+  transition:.25s;
+}
+
+.land-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+}
+
+.land-image{
+  height:185px;
+  position:relative;
+  overflow:hidden;
+  background:#dfe9e6;
+}
+
+.land-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.3s;
+}
+
+.land-card:hover .land-image img{
+  transform:scale(1.04);
+}
+
+.image-badge{
+  position:absolute;
+  top:12px;
+  right:12px;
+  background:rgba(255,255,255,.94);
+  color:var(--main);
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.heart{
+  position:absolute;
+  top:10px;
+  left:10px;
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:50%;
+  background:rgba(255,255,255,.94);
+  font-size:20px;
+  color:#687572;
+  z-index:3;
+}
+
+.heart.active{
+  color:#c44b55;
+}
+
+.land-body{
+  padding:18px;
+}
+
+.land-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:start;
+  gap:8px;
+}
+
+.land-title h3{
+  font-size:18px;
+  color:var(--main);
+}
+
+.land-id{
+  color:#8a9693;
+  font-size:11px;
+}
+
+.location{
+  color:var(--muted);
+  font-size:13px;
+  margin:5px 0 13px;
+}
+
+.land-price{
+  color:var(--main);
+  font-size:21px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.details-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:13px;
+}
+
+.detail-item{
+  background:#f6f9f8;
+  border-radius:9px;
+  padding:7px 9px;
+  font-size:12px;
+}
+
+.detail-item span{
+  display:block;
+  color:#8b9794;
+}
+
+.detail-item strong{
+  color:#3c4e4a;
+}
+
+.match-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin-bottom:13px;
+}
+
+.smart-score{
+  background:#edf6f3;
+  color:var(--main);
+  border-radius:10px;
+  padding:6px 9px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.suitable{
+  color:#8a6926;
+  background:#fff7e6;
+  border-radius:10px;
+  padding:6px 9px;
+  font-size:11px;
+}
+
+.card-actions{
+  display:flex;
+  gap:8px;
+}
+
+.card-actions button{
+  flex:1;
+}
+
+.verify{
+  color:#1e755c;
+  font-size:11px;
+  font-weight:bold;
+}
+
+/* MODAL */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(12,32,29,.62);
+  z-index:2000;
+  padding:20px;
+  overflow:auto;
+}
+
+.modal.show{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal-box{
+  width:min(950px,100%);
+  max-height:94vh;
+  overflow:auto;
+  background:white;
+  border-radius:25px;
+  position:relative;
+  padding:28px;
+}
+
+.close{
+  position:absolute;
+  top:15px;
+  left:15px;
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:50%;
+  background:#f0f4f2;
+  color:var(--main);
+  font-size:22px;
+  z-index:5;
+}
+
+.modal-title{
+  padding-left:50px;
+  margin-bottom:20px;
+}
+
+.modal-title h2{
+  color:var(--main);
+}
+
+.modal-title p{
+  color:var(--muted);
+}
+
+.gallery-main{
+  width:100%;
+  height:330px;
+  border-radius:18px;
+  overflow:hidden;
+  background:#eef4f2;
+}
+
+.gallery-main img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.thumbs{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  margin-top:10px;
+}
+
+.thumb{
+  width:85px;
+  height:65px;
+  flex:none;
+  border-radius:9px;
+  overflow:hidden;
+  border:2px solid transparent;
+  cursor:pointer;
+}
+
+.thumb.active{
+  border-color:var(--gold);
+}
+
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.detail-modal-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:20px 0;
+}
+
+.big-detail{
+  background:#f6f9f8;
+  padding:13px;
+  border-radius:12px;
+}
+
+.big-detail span{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.big-detail strong{
+  color:var(--main);
+}
+
+.reason-box{
+  background:#eef6f3;
+  border-right:4px solid var(--main2);
+  border-radius:12px;
+  padding:16px;
+  margin:18px 0;
+}
+
+.reason-box h3{
+  color:var(--main);
+  margin-bottom:7px;
+}
+
+.reason-list{
+  list-style:none;
+}
+
+.reason-list li{
+  margin:5px 0;
+  font-size:14px;
+}
+
+.reason-list li::before{
+  content:"✓";
+  color:#1e755c;
+  font-weight:bold;
+  margin-left:7px;
+}
+
+.description{
+  background:#fafcfb;
+  border:1px solid var(--border);
+  padding:16px;
+  border-radius:13px;
+  margin:15px 0;
+}
+
+.modal-actions{
+  display:flex;
+  flex-wrap:wrap;
   gap:10px;
   margin-top:15px;
 }
 
-.approve{
-  background:#26352d;
+/* WIZARD */
+
+.wizard-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
 }
 
-.reject{
-  background:#8b3d3d;
+.wizard-result{
+  margin-top:20px;
 }
+
+.recommendation{
+  background:#f5faf8;
+  border:1px solid #dcebe6;
+  border-radius:15px;
+  padding:15px;
+  margin-bottom:10px;
+}
+
+.recommendation h4{
+  color:var(--main);
+}
+
+.recommendation small{
+  color:var(--muted);
+}
+
+/* FAVORITES */
+
+.empty{
+  text-align:center;
+  padding:45px 20px;
+  color:var(--muted);
+  background:white;
+  border-radius:18px;
+  border:1px dashed var(--border);
+}
+
+/* COMPARE */
+
+.compare-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:650px;
+}
+
+.compare-table th,
+.compare-table td{
+  border:1px solid var(--border);
+  padding:12px;
+  text-align:center;
+}
+
+.compare-table th{
+  background:var(--light);
+  color:var(--main);
+}
+
+.compare-scroll{
+  overflow:auto;
+}
+
+/* NOTIFICATION */
+
+.notification-box{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+
+.toggle-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.switch{
+  position:relative;
+  width:55px;
+  height:30px;
+}
+
+.switch input{
+  display:none;
+}
+
+.slider{
+  position:absolute;
+  inset:0;
+  background:#cfdad7;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+.slider:before{
+  content:"";
+  width:22px;
+  height:22px;
+  position:absolute;
+  top:4px;
+  right:4px;
+  background:white;
+  border-radius:50%;
+  transition:.2s;
+}
+
+.switch input:checked + .slider{
+  background:var(--main);
+}
+
+.switch input:checked + .slider:before{
+  transform:translateX(-25px);
+}
+
+/* ADD LAND */
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.form-grid .full{
+  grid-column:1/-1;
+}
+
+.privacy{
+  background:#fff8e9;
+  color:#735a2d;
+  border-radius:12px;
+  padding:13px;
+  font-size:13px;
+  margin:15px 0;
+}
+
+/* ADMIN */
+
+.admin-only{
+  display:none;
+}
+
+.admin-panel{
+  background:#fff;
+  border:2px solid #e8dfc8;
+  border-radius:20px;
+  padding:22px;
+}
+
+.request-card{
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:16px;
+  margin:10px 0;
+}
+
+.request-actions{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  background:var(--main);
+  color:white;
+  padding:13px 18px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  transform:translateY(100px);
+  opacity:0;
+  transition:.3s;
+  z-index:4000;
+}
+
+.toast.show{
+  transform:translateY(0);
+  opacity:1;
+}
+
+/* FOOTER */
 
 footer{
-  text-align:center;
-  padding:35px;
-  background:#26352d;
+  margin-top:50px;
+  background:var(--main);
   color:white;
-  margin-top:40px;
+  padding:35px 20px;
 }
 
-@media(max-width:600px){
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-note{
+  color:#bdd0cc;
+  font-size:12px;
+  margin-top:7px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+  .filters{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .lands-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .quick-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+  .navbar{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .nav-actions{
+    width:100%;
+  }
+
+  .nav-btn{
+    flex:1;
+  }
+
+  .hero{
+    min-height:360px;
+  }
+
   .hero h1{
-    font-size:32px;
+    font-size:34px;
   }
 
-  header{
-    padding:15px 5%;
+  .hero p{
+    font-size:16px;
   }
 
-  .nav{
-    gap:8px;
-    font-size:13px;
+  .filters,
+  .lands-grid,
+  .quick-grid,
+  .wizard-grid,
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .search-box{
+    margin-top:-20px;
+  }
+
+  .detail-modal-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gallery-main{
+    height:230px;
+  }
+
+  .results-head{
+    align-items:flex-start;
+    flex-direction:column;
   }
 }
 </style>
@@ -305,139 +956,152 @@ footer{
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
+  <div class="navbar">
 
-  <div class="logo">دليلي</div>
+    <div class="logo">
+      <div class="logo-mark">د</div>
+      <div class="logo-text">
+        <strong>دليلي</strong>
+        <span>OMAN LAND GUIDE</span>
+      </div>
+    </div>
 
-  <nav class="nav">
-    <a href="#search">ابحث عن أرض</a>
-    <a href="#add-land">أضف أرضك</a>
-  </nav>
+    <div class="nav-actions">
+      <button class="nav-btn primary" onclick="scrollToSection('searchSection')">
+        🔎 ابحث عن أرضك
+      </button>
 
+      <button class="nav-btn" onclick="openModal('addModal')">
+        ➕ أضف أرضك
+      </button>
+
+      <button class="nav-btn" onclick="openModal('favoritesModal')">
+        ❤️ المفضلة
+        <span id="favCount">0</span>
+      </button>
+
+      <button class="nav-btn" onclick="openModal('compareModal')">
+        ⚖️ المقارنة
+        <span id="compareCount">0</span>
+      </button>
+    </div>
+
+  </div>
 </header>
 
 
+<!-- ================= HERO ================= -->
+
 <section class="hero">
+  <div class="hero-content">
 
-  <h1>المكان يبدأ من دليلي</h1>
+    <small>Oman Land Guide</small>
 
-  <p>
-    ابحث عن الأرض المناسبة لك في عُمان بسهولة.
-  </p>
+    <h1>المكان يبدأ من دليلي</h1>
 
-  <button class="btn"
-  onclick="document.getElementById('search').scrollIntoView()">
-    ابحث عن أرضك
-  </button>
+    <p>
+      ابحث عن الأرض المناسبة لك في عُمان بسهولة.
+    </p>
 
+  </div>
 </section>
 
 
-<section class="section" id="search">
+<!-- ================= SEARCH ================= -->
 
-  <h2>🔎 ابحث عن أرضك</h2>
+<main class="container">
 
-  <div class="filters">
+<section id="searchSection">
 
-    <div>
-      <label>الولاية</label>
+  <div class="search-box">
 
-      <select id="wilayat">
-        <option value="">كل الولايات</option>
-        <option value="السيب">السيب</option>
-        <option value="بوشر">بوشر</option>
-        <option value="نزوى">نزوى</option>
-        <option value="صحار">صحار</option>
-        <option value="صلالة">صلالة</option>
-        <option value="صور">صور</option>
-        <option value="بركاء">بركاء</option>
-        <option value="الرستاق">الرستاق</option>
-      </select>
+    <div class="section-title">
+      <h2>ابحث عن أرضك</h2>
+      <p>
+        استخدم الفلاتر للوصول إلى الأراضي التي تناسب احتياجاتك.
+      </p>
     </div>
 
+    <div class="filters">
 
-    <div>
-      <label>المنطقة</label>
+      <div class="field">
+        <label>الولاية</label>
+        <select id="wilayatFilter">
+          <option value="">كل الولايات</option>
+          <option>السيب</option>
+          <option>بوشر</option>
+          <option>نزوى</option>
+          <option>صحار</option>
+          <option>صلالة</option>
+          <option>صور</option>
+          <option>بركاء</option>
+          <option>الرستاق</option>
+        </select>
+      </div>
 
-      <input
-        id="areaName"
-        type="text"
-        placeholder="مثال: المعبيلة">
+      <div class="field">
+        <label>المنطقة</label>
+        <input id="areaFilter" placeholder="مثال: المعبيلة">
+      </div>
+
+      <div class="field">
+        <label>نوع الأرض</label>
+        <select id="typeFilter">
+          <option value="">كل الأنواع</option>
+          <option>سكنية</option>
+          <option>تجارية</option>
+          <option>زراعية</option>
+          <option>سكنية تجارية</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>الاستخدام المقترح</label>
+        <select id="purposeFilter">
+          <option value="">كل الاستخدامات</option>
+          <option>بناء منزل</option>
+          <option>استثمار</option>
+          <option>زراعة</option>
+          <option>مشروع تجاري</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>أقل سعر</label>
+        <input id="minPrice" type="number" placeholder="مثال: 20000">
+      </div>
+
+      <div class="field">
+        <label>أعلى سعر</label>
+        <input id="maxPrice" type="number" placeholder="مثال: 70000">
+      </div>
+
+      <div class="field">
+        <label>أقل مساحة</label>
+        <input id="minArea" type="number" placeholder="م²">
+      </div>
+
+      <div class="field">
+        <label>أعلى مساحة</label>
+        <input id="maxArea" type="number" placeholder="م²">
+      </div>
+
     </div>
 
+    <div class="filter-actions">
 
-    <div>
-      <label>نوع الأرض</label>
-
-      <select id="type">
-        <option value="">كل الأنواع</option>
-        <option value="سكنية">سكنية</option>
-        <option value="تجارية">تجارية</option>
-        <option value="زراعية">زراعية</option>
-      </select>
-    </div>
-
-
-    <div>
-      <label>الاستخدام المقصود</label>
-
-      <select id="purpose">
-        <option value="">كل الاستخدامات</option>
-        <option value="بناء منزل">بناء منزل</option>
-        <option value="استثمار">استثمار</option>
-        <option value="تجارة">تجارة</option>
-        <option value="زراعة">زراعة</option>
-      </select>
-    </div>
-
-
-    <div>
-      <label>أقل سعر (ريال)</label>
-
-      <input
-        id="minPrice"
-        type="number"
-        placeholder="مثال: 20000">
-    </div>
-
-
-    <div>
-      <label>أعلى سعر (ريال)</label>
-
-      <input
-        id="maxPrice"
-        type="number"
-        placeholder="مثال: 60000">
-    </div>
-
-
-    <div>
-      <label>أقل مساحة (م²)</label>
-
-      <input
-        id="minArea"
-        type="number"
-        placeholder="مثال: 500">
-    </div>
-
-
-    <div>
-      <label>أعلى مساحة (م²)</label>
-
-      <input
-        id="maxArea"
-        type="number"
-        placeholder="مثال: 1000">
-    </div>
-
-
-    <div class="filter-buttons">
-
-      <button class="btn" onclick="filterLands()">
-        بحث
+      <button class="btn btn-main" onclick="searchLands()">
+        🔎 ابحث عن أرضك
       </button>
 
-      <button class="btn btn-light" onclick="closestMatch()">
+      <button class="btn btn-gold" onclick="openModal('wizardModal')">
+        ✨ ساعدني أختار
+      </button>
+
+      <button class="btn btn-light" onclick="sortByMatch()">
         ⭐ الأقرب لمتطلباتي
       </button>
 
@@ -449,858 +1113,2194 @@ footer{
 
   </div>
 
+</section>
 
-  <div class="lands" id="lands"></div>
+
+<!-- ================= QUICK FEATURES ================= -->
+
+<section class="quick-grid">
+
+  <div class="quick-card" onclick="openModal('wizardModal')">
+    <div class="icon">✨</div>
+    <h3>ساعدني أختار</h3>
+    <p>خل دليلي يساعدك في الوصول للأرض المناسبة.</p>
+  </div>
+
+  <div class="quick-card" onclick="openModal('favoritesModal')">
+    <div class="icon">❤️</div>
+    <h3>الأراضي المفضلة</h3>
+    <p>احفظ الأراضي التي أعجبتك للرجوع إليها.</p>
+  </div>
+
+  <div class="quick-card" onclick="openModal('compareModal')">
+    <div class="icon">⚖️</div>
+    <h3>مقارنة الأراضي</h3>
+    <p>قارن بين أرضين أو ثلاث أراضٍ بسهولة.</p>
+  </div>
+
+  <div class="quick-card" onclick="openModal('notifyModal')">
+    <div class="icon">🔔</div>
+    <h3>تنبيهات الأراضي</h3>
+    <p>احصل على تنبيه عند إضافة أرض تناسبك.</p>
+  </div>
 
 </section>
 
 
-<section class="section" id="add-land">
+<!-- ================= RESULTS ================= -->
 
-  <h2>🏡 أضف أرضك</h2>
+<section>
 
-  <div class="add-box">
+  <div class="results-head">
 
-    <div class="notice">
+    <div>
+      <h2>الأراضي المتاحة</h2>
+      <div class="results-count" id="resultsCount">
+        20 أرض تجريبية
+      </div>
+    </div>
 
-      🔒 <strong>خصوصية بياناتك:</strong><br>
+    <select class="sort-select" id="sortSelect" onchange="applySort()">
+      <option value="default">الترتيب الافتراضي</option>
+      <option value="score">درجة دليلي</option>
+      <option value="priceLow">السعر: الأقل</option>
+      <option value="priceHigh">السعر: الأعلى</option>
+      <option value="areaHigh">المساحة: الأكبر</option>
+    </select>
 
-      رقم الهاتف وبيانات الأرض التي ترسلها
-      <strong>لن تظهر للزوار</strong>
-      أثناء المراجعة.
+  </div>
 
-      ستتم مراجعة الطلب من فريق
-      <strong>دليلي</strong> أولًا.
+  <div id="landsGrid" class="lands-grid"></div>
 
-      بعد الموافقة فقط يمكن نشر بيانات الأرض
-      ورقم التواصل حسب البيانات المعتمدة.
+</section>
+
+
+<!-- ================= NOTIFICATION SECTION ================= -->
+
+<section style="margin-top:45px">
+
+  <div class="notification-box">
+
+    <div class="toggle-row">
+
+      <div>
+        <h2 style="color:var(--main)">🔔 تنبيه عن الأراضي الجديدة</h2>
+        <p style="color:var(--muted)">
+          فعّل التنبيهات ليتم حفظ تفضيلاتك لهذا الجهاز.
+        </p>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="notificationToggle" onchange="toggleNotifications()">
+        <span class="slider"></span>
+      </label>
 
     </div>
 
+  </div>
 
-    <div class="form-grid">
+</section>
 
-      <div>
-        <label>رقم الأرض</label>
-        <input id="newId" placeholder="مثال: D021">
-      </div>
+</main>
 
 
-      <div>
-        <label>الولاية</label>
+<!-- ================= LAND DETAILS MODAL ================= -->
 
-        <select id="newWilayat">
-          <option value="">اختر الولاية</option>
-          <option value="السيب">السيب</option>
-          <option value="بوشر">بوشر</option>
-          <option value="نزوى">نزوى</option>
-          <option value="صحار">صحار</option>
-          <option value="صلالة">صلالة</option>
-          <option value="صور">صور</option>
-          <option value="بركاء">بركاء</option>
-          <option value="الرستاق">الرستاق</option>
+<div class="modal" id="detailsModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal('detailsModal')">×</button>
+
+    <div id="detailsContent"></div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= WIZARD MODAL ================= -->
+
+<div class="modal" id="wizardModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal('wizardModal')">×</button>
+
+    <div class="modal-title">
+      <h2>✨ ساعدني أختار</h2>
+      <p>
+        أخبر دليلي بما تحتاجه وسنرتب لك الأراضي الأقرب لمتطلباتك.
+      </p>
+    </div>
+
+    <div class="wizard-grid">
+
+      <div class="field">
+        <label>الولاية المفضلة</label>
+        <select id="wizWilayat">
+          <option value="">أي ولاية</option>
+          <option>السيب</option>
+          <option>بوشر</option>
+          <option>نزوى</option>
+          <option>صحار</option>
+          <option>صلالة</option>
+          <option>صور</option>
+          <option>بركاء</option>
+          <option>الرستاق</option>
         </select>
       </div>
 
-
-      <div>
-        <label>المنطقة</label>
-        <input id="newArea" placeholder="اسم المنطقة">
-      </div>
-
-
-      <div>
-        <label>السعر</label>
-        <input id="newPrice" type="number" placeholder="بالريال العماني">
-      </div>
-
-
-      <div>
-        <label>المساحة</label>
-        <input id="newSize" type="number" placeholder="م²">
-      </div>
-
-
-      <div>
+      <div class="field">
         <label>نوع الأرض</label>
-
-        <select id="newType">
-          <option value="">اختر النوع</option>
-          <option value="سكنية">سكنية</option>
-          <option value="تجارية">تجارية</option>
-          <option value="زراعية">زراعية</option>
+        <select id="wizType">
+          <option value="">أي نوع</option>
+          <option>سكنية</option>
+          <option>تجارية</option>
+          <option>زراعية</option>
         </select>
       </div>
 
-
-      <div>
-        <label>الاستخدام المقصود</label>
-
-        <select id="newPurpose">
-          <option value="">اختر الاستخدام</option>
-          <option value="بناء منزل">بناء منزل</option>
-          <option value="استثمار">استثمار</option>
-          <option value="تجارة">تجارة</option>
-          <option value="زراعة">زراعة</option>
+      <div class="field">
+        <label>الاستخدام</label>
+        <select id="wizPurpose">
+          <option value="">أي استخدام</option>
+          <option>بناء منزل</option>
+          <option>استثمار</option>
+          <option>زراعة</option>
+          <option>مشروع تجاري</option>
         </select>
       </div>
 
-
-      <div>
-        <label>رقم الهاتف</label>
-        <input id="newPhone" type="tel" placeholder="رقم التواصل">
+      <div class="field">
+        <label>ميزانيتك القصوى</label>
+        <input id="wizBudget" type="number" placeholder="مثال: 60000">
       </div>
 
-
-      <div class="full">
-        <label>وصف المنطقة</label>
-
-        <textarea
-          id="newDescription"
-          placeholder="اكتب وصفًا مختصرًا عن المنطقة والخدمات القريبة..."></textarea>
+      <div class="field">
+        <label>أقل مساحة تحتاجها</label>
+        <input id="wizArea" type="number" placeholder="مثال: 600">
       </div>
 
-
-      <div class="full">
-        <label>رابط موقع الأرض على الخريطة</label>
-
-        <input
-          id="newMap"
-          placeholder="ضع رابط Google Maps هنا">
+      <div class="field">
+        <label>أهم شيء بالنسبة لك</label>
+        <select id="wizPriority">
+          <option value="balanced">متوازن</option>
+          <option value="price">السعر</option>
+          <option value="area">المساحة</option>
+          <option value="location">الموقع</option>
+          <option value="purpose">الاستخدام</option>
+        </select>
       </div>
 
+    </div>
 
-      <div class="full">
+    <div class="filter-actions">
+      <button class="btn btn-main" onclick="runWizard()">
+        ✨ اعثر على أرضي
+      </button>
+    </div>
 
-        <button class="btn" onclick="submitLand()">
-          إرسال الأرض للمراجعة
+    <div id="wizardResults" class="wizard-result"></div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= FAVORITES MODAL ================= -->
+
+<div class="modal" id="favoritesModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal('favoritesModal')">×</button>
+
+    <div class="modal-title">
+      <h2>❤️ الأراضي المفضلة</h2>
+      <p>الأراضي التي حفظتها على جهازك.</p>
+    </div>
+
+    <div id="favoritesContent"></div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= COMPARE MODAL ================= -->
+
+<div class="modal" id="compareModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal('compareModal')">×</button>
+
+    <div class="modal-title">
+      <h2>⚖️ مقارنة الأراضي</h2>
+      <p>يمكنك اختيار حتى 3 أراضٍ للمقارنة.</p>
+    </div>
+
+    <div id="compareContent"></div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= NOTIFICATION MODAL ================= -->
+
+<div class="modal" id="notifyModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal('notifyModal')">×</button>
+
+    <div class="modal-title">
+      <h2>🔔 تنبيهات الأراضي الجديدة</h2>
+      <p>
+        اختر تفضيلاتك وسيتم حفظها لهذا الجهاز في النسخة التجريبية.
+      </p>
+    </div>
+
+    <div class="wizard-grid">
+
+      <div class="field">
+        <label>الولاية</label>
+        <select id="notifyWilayat">
+          <option value="">أي ولاية</option>
+          <option>السيب</option>
+          <option>بوشر</option>
+          <option>نزوى</option>
+          <option>صحار</option>
+          <option>صلالة</option>
+          <option>صور</option>
+          <option>بركاء</option>
+          <option>الرستاق</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>أقصى سعر</label>
+        <input id="notifyBudget" type="number" placeholder="مثال: 60000">
+      </div>
+
+      <div class="field">
+        <label>نوع الأرض</label>
+        <select id="notifyType">
+          <option value="">أي نوع</option>
+          <option>سكنية</option>
+          <option>تجارية</option>
+          <option>زراعية</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>الاستخدام</label>
+        <select id="notifyPurpose">
+          <option value="">أي استخدام</option>
+          <option>بناء منزل</option>
+          <option>استثمار</option>
+          <option>زراعة</option>
+          <option>مشروع تجاري</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="filter-actions">
+
+      <button class="btn btn-main" onclick="saveNotificationPreferences()">
+        🔔 حفظ التنبيهات
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= ADD LAND MODAL ================= -->
+
+<div class="modal" id="addModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal('addModal')">×</button>
+
+    <div class="modal-title">
+      <h2>➕ أضف أرضك</h2>
+      <p>
+        أرسل بيانات الأرض إلى فريق دليلي للمراجعة.
+      </p>
+    </div>
+
+    <div class="privacy">
+      🔒 <strong>خصوصيتك مهمة:</strong>
+      البيانات ورقم الهاتف لا تظهر للزوار أثناء المراجعة.
+      الأرض لا تظهر للعامة إلا بعد اعتمادها من فريق دليلي.
+    </div>
+
+    <form id="addLandForm">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label>رقم الأرض</label>
+          <input id="newId" required placeholder="مثال: D021">
+        </div>
+
+        <div class="field">
+          <label>الولاية</label>
+          <input id="newWilayat" required placeholder="مثال: السيب">
+        </div>
+
+        <div class="field">
+          <label>المنطقة</label>
+          <input id="newAreaName" required placeholder="مثال: المعبيلة">
+        </div>
+
+        <div class="field">
+          <label>السعر بالريال العماني</label>
+          <input id="newPrice" type="number" required>
+        </div>
+
+        <div class="field">
+          <label>المساحة بالمتر المربع</label>
+          <input id="newSize" type="number" required>
+        </div>
+
+        <div class="field">
+          <label>نوع الأرض</label>
+          <select id="newType" required>
+            <option value="">اختر</option>
+            <option>سكنية</option>
+            <option>تجارية</option>
+            <option>زراعية</option>
+            <option>سكنية تجارية</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>الاستخدام المقترح</label>
+          <select id="newPurpose" required>
+            <option value="">اختر</option>
+            <option>بناء منزل</option>
+            <option>استثمار</option>
+            <option>زراعة</option>
+            <option>مشروع تجاري</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>رقم الهاتف</label>
+          <input id="newPhone" required placeholder="سيبقى مخفياً حتى الاعتماد">
+        </div>
+
+        <div class="field full">
+          <label>وصف المنطقة</label>
+          <textarea id="newDescription" rows="3" placeholder="اكتب معلومات عن المنطقة والموقع والخدمات القريبة"></textarea>
+        </div>
+
+        <div class="field full">
+          <label>رابط الموقع على الخريطة</label>
+          <input id="newMap" placeholder="رابط Google Maps إن وجد">
+        </div>
+
+        <div class="field full">
+          <label>رابط صورة الأرض</label>
+          <input id="newImage" placeholder="رابط الصورة إن وجد">
+        </div>
+
+      </div>
+
+      <div class="filter-actions">
+
+        <button class="btn btn-main" type="submit">
+          إرسال للمراجعة
+        </button>
+
+        <button class="btn btn-light" type="button" onclick="closeModal('addModal')">
+          إلغاء
         </button>
 
       </div>
 
-    </div>
+    </form>
+
+  </div>
+
+</div>
 
 
-    <div class="status-box" id="submitStatus"></div>
+<!-- ================= ADMIN ================= -->
+
+<section id="adminSection" class="container admin-only">
+
+  <div class="admin-panel">
+
+    <h2 style="color:var(--main)">🔐 طلبات الأراضي — دليلي</h2>
+
+    <p style="color:var(--muted);margin:7px 0 20px">
+      هذا القسم مخصص لفريق دليلي فقط لمراجعة واعتماد الأراضي.
+    </p>
+
+    <div id="adminRequests"></div>
 
   </div>
 
 </section>
 
 
-<section class="section admin">
-
-  <h2>🛡️ طلبات الأراضي — دليلي</h2>
-
-  <div class="notice">
-
-    هذه لوحة تجريبية للمشروع.
-
-    الطلبات الجديدة تكون
-    <strong>قيد المراجعة</strong>
-    ولا تظهر بياناتها للزوار حتى يتم قبولها.
-
-  </div>
-
-  <div class="requests" id="requests"></div>
-
-</section>
-
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-  © 2026 دليلي - Oman Land Guide
+  <div class="footer-inner">
+
+    <div>
+      <strong style="font-size:22px">دليلي</strong>
+      <div class="footer-note">
+        Oman Land Guide — المكان يبدأ من دليلي.
+      </div>
+    </div>
+
+    <div class="footer-note">
+      © 2026 دليلي — نسخة تجريبية للمشروع الجامعي
+    </div>
+
+  </div>
 
 </footer>
 
 
+<div id="toast" class="toast"></div>
+
+
 <script>
+
+/* =========================================================
+   DEMO LAND DATA
+========================================================= */
 
 const lands = [
 
-  {
-    id:"D001",
-    location:"السيب / المعبيلة",
-    wilayat:"السيب",
-    areaName:"المعبيلة",
-    price:36000,
-    area:600,
-    type:"سكنية",
-    purpose:"بناء منزل",
-    score:92,
-    description:"منطقة سكنية قريبة من الخدمات والطرق الرئيسية.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D001",
+ wilayat:"السيب",
+ area:"المعبيلة",
+ price:36000,
+ size:600,
+ type:"سكنية",
+ purpose:"بناء منزل",
+ score:92,
+ verified:true,
+ phone:"",
+ streetType:"شارع رئيسي",
+ areaDescription:"منطقة سكنية مناسبة لبناء منزل وقريبة من الخدمات الأساسية.",
+ nearbyServices:"محلات، مدارس، مساجد، طرق رئيسية",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D002",
-    location:"السيب / الخوض",
-    wilayat:"السيب",
-    areaName:"الخوض",
-    price:48000,
-    area:750,
-    type:"سكنية",
-    purpose:"بناء منزل",
-    score:90,
-    description:"منطقة حيوية وقريبة من الخدمات.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D002",
+ wilayat:"السيب",
+ area:"الخوض",
+ price:48000,
+ size:750,
+ type:"سكنية",
+ purpose:"بناء منزل",
+ score:90,
+ verified:true,
+ phone:"",
+ streetType:"شارع فرعي",
+ areaDescription:"منطقة سكنية حيوية ومناسبة للعائلات.",
+ nearbyServices:"جامعات، مدارس، مطاعم، محلات",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D003",
-    location:"السيب / الموالح",
-    wilayat:"السيب",
-    areaName:"الموالح",
-    price:65000,
-    area:900,
-    type:"تجارية",
-    purpose:"تجارة",
-    score:94,
-    description:"موقع مناسب للأنشطة التجارية.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D003",
+ wilayat:"السيب",
+ area:"الموالح",
+ price:65000,
+ size:900,
+ type:"تجارية",
+ purpose:"مشروع تجاري",
+ score:94,
+ verified:true,
+ phone:"",
+ streetType:"شارع تجاري",
+ areaDescription:"موقع مناسب للمشاريع التجارية.",
+ nearbyServices:"أسواق، مطاعم، محلات، طرق رئيسية",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D004",
-    location:"بوشر / العذيبة",
-    wilayat:"بوشر",
-    areaName:"العذيبة",
-    price:72000,
-    area:800,
-    type:"سكنية",
-    purpose:"بناء منزل",
-    score:91,
-    description:"منطقة قريبة من عدد من الخدمات.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D004",
+ wilayat:"بوشر",
+ area:"العذيبة",
+ price:72000,
+ size:800,
+ type:"سكنية",
+ purpose:"بناء منزل",
+ score:91,
+ verified:true,
+ phone:"",
+ streetType:"شارع رئيسي",
+ areaDescription:"موقع سكني قريب من عدة خدمات.",
+ nearbyServices:"مستشفيات، مدارس، مطاعم",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D005",
-    location:"بوشر / الغبرة",
-    wilayat:"بوشر",
-    areaName:"الغبرة",
-    price:85000,
-    area:1000,
-    type:"تجارية",
-    purpose:"تجارة",
-    score:89,
-    description:"موقع مناسب للاستخدام التجاري.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D005",
+ wilayat:"بوشر",
+ area:"الغبرة",
+ price:85000,
+ size:1000,
+ type:"تجارية",
+ purpose:"مشروع تجاري",
+ score:89,
+ verified:true,
+ phone:"",
+ streetType:"شارع تجاري",
+ areaDescription:"منطقة نشطة ومناسبة للاستخدام التجاري.",
+ nearbyServices:"محلات، مطاعم، فنادق، خدمات",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D006",
-    location:"نزوى / فرق",
-    wilayat:"نزوى",
-    areaName:"فرق",
-    price:28000,
-    area:1000,
-    type:"زراعية",
-    purpose:"زراعة",
-    score:84,
-    description:"منطقة مناسبة للاستخدام الزراعي.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D006",
+ wilayat:"نزوى",
+ area:"فرق",
+ price:28000,
+ size:1000,
+ type:"زراعية",
+ purpose:"زراعة",
+ score:84,
+ verified:true,
+ phone:"",
+ streetType:"شارع فرعي",
+ areaDescription:"أرض واسعة مناسبة للاستخدام الزراعي.",
+ nearbyServices:"مزارع، طرق، خدمات محلية",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D007",
-    location:"نزوى / حي التراث",
-    wilayat:"نزوى",
-    areaName:"حي التراث",
-    price:35000,
-    area:650,
-    type:"سكنية",
-    purpose:"بناء منزل",
-    score:87,
-    description:"منطقة سكنية هادئة.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D007",
+ wilayat:"نزوى",
+ area:"حي التراث",
+ price:35000,
+ size:650,
+ type:"سكنية",
+ purpose:"بناء منزل",
+ score:87,
+ verified:true,
+ phone:"",
+ streetType:"شارع فرعي",
+ areaDescription:"موقع هادئ مناسب للسكن.",
+ nearbyServices:"مدارس، مسجد، محلات",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D008",
-    location:"صحار / الحجرة",
-    wilayat:"صحار",
-    areaName:"الحجرة",
-    price:30000,
-    area:700,
-    type:"سكنية",
-    purpose:"بناء منزل",
-    score:86,
-    description:"منطقة سكنية مناسبة للعائلات.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D008",
+ wilayat:"صحار",
+ area:"الحجرة",
+ price:30000,
+ size:700,
+ type:"سكنية",
+ purpose:"بناء منزل",
+ score:86,
+ verified:true,
+ phone:"",
+ streetType:"شارع رئيسي",
+ areaDescription:"منطقة سكنية متنامية.",
+ nearbyServices:"مدارس، محلات، طرق رئيسية",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D009",
-    location:"صحار / صلان",
-    wilayat:"صحار",
-    areaName:"صلان",
-    price:52000,
-    area:850,
-    type:"تجارية",
-    purpose:"تجارة",
-    score:88,
-    description:"موقع تجاري قريب من الطرق.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D009",
+ wilayat:"صحار",
+ area:"صلان",
+ price:52000,
+ size:850,
+ type:"تجارية",
+ purpose:"مشروع تجاري",
+ score:88,
+ verified:true,
+ phone:"",
+ streetType:"شارع تجاري",
+ areaDescription:"موقع تجاري مناسب للمشاريع.",
+ nearbyServices:"أسواق، مطاعم، خدمات",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D010",
-    location:"صلالة / عوقد",
-    wilayat:"صلالة",
-    areaName:"عوقد",
-    price:40000,
-    area:900,
-    type:"سكنية",
-    purpose:"بناء منزل",
-    score:90,
-    description:"منطقة سكنية مع خدمات قريبة.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D010",
+ wilayat:"صلالة",
+ area:"عوقد",
+ price:40000,
+ size:900,
+ type:"سكنية",
+ purpose:"بناء منزل",
+ score:90,
+ verified:true,
+ phone:"",
+ streetType:"شارع رئيسي",
+ areaDescription:"منطقة مناسبة للعائلات وقريبة من الخدمات.",
+ nearbyServices:"مدارس، أسواق، مساجد",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D011",
-    location:"صلالة / السعادة",
-    wilayat:"صلالة",
-    areaName:"السعادة",
-    price:60000,
-    area:1100,
-    type:"تجارية",
-    purpose:"تجارة",
-    score:93,
-    description:"موقع مناسب للأنشطة التجارية.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D011",
+ wilayat:"صلالة",
+ area:"السعادة",
+ price:60000,
+ size:1100,
+ type:"تجارية",
+ purpose:"استثمار",
+ score:93,
+ verified:true,
+ phone:"",
+ streetType:"شارع رئيسي",
+ areaDescription:"مساحة جيدة مناسبة للاستثمار والمشاريع.",
+ nearbyServices:"أسواق، طرق رئيسية، خدمات",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D012",
-    location:"صور / العيجة",
-    wilayat:"صور",
-    areaName:"العيجة",
-    price:32000,
-    area:650,
-    type:"سكنية",
-    purpose:"بناء منزل",
-    score:85,
-    description:"منطقة قريبة من البحر والخدمات.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D012",
+ wilayat:"صور",
+ area:"العيجة",
+ price:32000,
+ size:650,
+ type:"سكنية",
+ purpose:"بناء منزل",
+ score:85,
+ verified:true,
+ phone:"",
+ streetType:"شارع فرعي",
+ areaDescription:"منطقة هادئة وقريبة من البحر والخدمات.",
+ nearbyServices:"محلات، مطاعم، طرق",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D013",
-    location:"صور / بلاد صور",
-    wilayat:"صور",
-    areaName:"بلاد صور",
-    price:45000,
-    area:800,
-    type:"تجارية",
-    purpose:"تجارة",
-    score:88,
-    description:"موقع مناسب للنشاط التجاري.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D013",
+ wilayat:"صور",
+ area:"بلاد صور",
+ price:45000,
+ size:800,
+ type:"تجارية",
+ purpose:"استثمار",
+ score:88,
+ verified:true,
+ phone:"",
+ streetType:"شارع رئيسي",
+ areaDescription:"موقع مناسب للاستثمار والمشاريع.",
+ nearbyServices:"أسواق، مطاعم، خدمات",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D014",
-    location:"بركاء / السوادي",
-    wilayat:"بركاء",
-    areaName:"السوادي",
-    price:38000,
-    area:700,
-    type:"سكنية",
-    purpose:"بناء منزل",
-    score:91,
-    description:"منطقة سكنية قريبة من الخدمات.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D014",
+ wilayat:"بركاء",
+ area:"السوادي",
+ price:38000,
+ size:700,
+ type:"سكنية",
+ purpose:"بناء منزل",
+ score:91,
+ verified:true,
+ phone:"",
+ streetType:"شارع رئيسي",
+ areaDescription:"منطقة سكنية مناسبة للعائلات.",
+ nearbyServices:"مدارس، أسواق، خدمات",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D015",
-    location:"بركاء / الرميس",
-    wilayat:"بركاء",
-    areaName:"الرميس",
-    price:26000,
-    area:1200,
-    type:"زراعية",
-    purpose:"زراعة",
-    score:82,
-    description:"مساحة مناسبة للاستخدام الزراعي.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D015",
+ wilayat:"بركاء",
+ area:"الرميس",
+ price:26000,
+ size:1200,
+ type:"زراعية",
+ purpose:"زراعة",
+ score:82,
+ verified:true,
+ phone:"",
+ streetType:"شارع فرعي",
+ areaDescription:"مساحة كبيرة مناسبة للزراعة.",
+ nearbyServices:"مزارع، طرق، خدمات محلية",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D016",
-    location:"الرستاق / الحوقين",
-    wilayat:"الرستاق",
-    areaName:"الحوقين",
-    price:22000,
-    area:1500,
-    type:"زراعية",
-    purpose:"زراعة",
-    score:80,
-    description:"منطقة واسعة ومناسبة للزراعة.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D016",
+ wilayat:"الرستاق",
+ area:"الحوقين",
+ price:22000,
+ size:1500,
+ type:"زراعية",
+ purpose:"زراعة",
+ score:80,
+ verified:true,
+ phone:"",
+ streetType:"شارع فرعي",
+ areaDescription:"أرض واسعة مناسبة للاستخدام الزراعي.",
+ nearbyServices:"مزارع، طرق، خدمات",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D017",
-    location:"الرستاق / وسط الولاية",
-    wilayat:"الرستاق",
-    areaName:"وسط الولاية",
-    price:33000,
-    area:700,
-    type:"سكنية",
-    purpose:"بناء منزل",
-    score:86,
-    description:"موقع قريب من الخدمات الأساسية.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D017",
+ wilayat:"الرستاق",
+ area:"وسط الولاية",
+ price:33000,
+ size:700,
+ type:"سكنية",
+ purpose:"بناء منزل",
+ score:86,
+ verified:true,
+ phone:"",
+ streetType:"شارع رئيسي",
+ areaDescription:"موقع قريب من الخدمات الأساسية.",
+ nearbyServices:"مدارس، محلات، مساجد",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D018",
-    location:"السيب / حيل الشمالية",
-    wilayat:"السيب",
-    areaName:"حيل الشمالية",
-    price:58000,
-    area:720,
-    type:"سكنية",
-    purpose:"بناء منزل",
-    score:93,
-    description:"منطقة سكنية حيوية.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D018",
+ wilayat:"السيب",
+ area:"حيل الشمالية",
+ price:58000,
+ size:720,
+ type:"سكنية",
+ purpose:"بناء منزل",
+ score:93,
+ verified:true,
+ phone:"",
+ streetType:"شارع رئيسي",
+ areaDescription:"موقع مميز مناسب للسكن.",
+ nearbyServices:"مدارس، أسواق، طرق رئيسية",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D019",
-    location:"بوشر / المسفاة",
-    wilayat:"بوشر",
-    areaName:"المسفاة",
-    price:95000,
-    area:1200,
-    type:"تجارية",
-    purpose:"استثمار",
-    score:95,
-    description:"موقع مناسب للاستثمار التجاري.",
-    map:"https://maps.google.com"
-  },
+{
+ id:"D019",
+ wilayat:"بوشر",
+ area:"المسفاة",
+ price:95000,
+ size:1200,
+ type:"تجارية",
+ purpose:"استثمار",
+ score:95,
+ verified:true,
+ phone:"",
+ streetType:"شارع تجاري",
+ areaDescription:"مساحة كبيرة مناسبة للاستثمار والمشاريع.",
+ nearbyServices:"طرق رئيسية، أسواق، خدمات",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
+ ]
+},
 
-  {
-    id:"D020",
-    location:"صحار / فلج القبائل",
-    wilayat:"صحار",
-    areaName:"فلج القبائل",
-    price:27000,
-    area:1300,
-    type:"زراعية",
-    purpose:"زراعة",
-    score:83,
-    description:"مساحة كبيرة مناسبة للاستخدام الزراعي.",
-    map:"https://maps.google.com"
-  }
+{
+ id:"D020",
+ wilayat:"صحار",
+ area:"فلج القبائل",
+ price:27000,
+ size:1300,
+ type:"زراعية",
+ purpose:"زراعة",
+ score:83,
+ verified:true,
+ phone:"",
+ streetType:"شارع فرعي",
+ areaDescription:"أرض واسعة مناسبة للزراعة.",
+ nearbyServices:"مزارع، طرق، خدمات",
+ map:"https://maps.google.com",
+ images:[
+  "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80"
+ ]
+}
 
 ];
 
 
-let pendingRequests = [];
+/* =========================================================
+   STATE
+========================================================= */
+
+let visibleLands = [...lands];
+
+let favorites =
+  JSON.parse(localStorage.getItem("daliliFavorites") || "[]");
+
+let compareList =
+  JSON.parse(localStorage.getItem("daliliCompare") || "[]");
+
+let pendingRequests =
+  JSON.parse(localStorage.getItem("daliliPending") || "[]");
+
+let approvedUserLands =
+  JSON.parse(localStorage.getItem("daliliApproved") || "[]");
+
+let allApprovedLands = [...lands,...approvedUserLands];
+
+let currentPreferences =
+  JSON.parse(localStorage.getItem("daliliPreferences") || "null");
 
 
-function displayLands(data){
+/* =========================================================
+   HELPERS
+========================================================= */
 
-  const container =
-    document.getElementById("lands");
+function money(value){
+  return Number(value).toLocaleString("en-US") + " ر.ع";
+}
 
-  if(data.length === 0){
+function number(value){
+  return Number(value).toLocaleString("en-US");
+}
 
-    container.innerHTML =
-      '<div class="empty">لم نعثر على أرض بهذه المواصفات.</div>';
+function getLand(id){
+  return allApprovedLands.find(l => l.id === id);
+}
+
+function getImage(land){
+  return land.images && land.images.length
+    ? land.images[0]
+    : "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80";
+}
+
+function showToast(message){
+  const toast=document.getElementById("toast");
+  toast.textContent=message;
+  toast.classList.add("show");
+
+  setTimeout(()=>{
+    toast.classList.remove("show");
+  },2600);
+}
+
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({
+    behavior:"smooth"
+  });
+}
+
+function openModal(id){
+  document.getElementById(id).classList.add("show");
+
+  if(id==="favoritesModal"){
+    renderFavorites();
+  }
+
+  if(id==="compareModal"){
+    renderCompare();
+  }
+
+  if(id==="adminSection"){
+    renderAdmin();
+  }
+}
+
+function closeModal(id){
+  document.getElementById(id).classList.remove("show");
+}
+
+
+/* =========================================================
+   SMART SCORE
+========================================================= */
+
+function calculateSmartScore(land,prefs){
+
+  if(!prefs){
+    return land.score || 80;
+  }
+
+  let score=0;
+  let total=0;
+
+  if(prefs.wilayat){
+    total+=25;
+    if(land.wilayat===prefs.wilayat) score+=25;
+  }
+
+  if(prefs.type){
+    total+=15;
+    if(land.type===prefs.type) score+=15;
+  }
+
+  if(prefs.purpose){
+    total+=20;
+    if(land.purpose===prefs.purpose) score+=20;
+  }
+
+  if(prefs.budget){
+    total+=20;
+
+    if(land.price<=prefs.budget){
+      score+=20;
+    }else{
+      const difference=(land.price-prefs.budget)/prefs.budget;
+      score+=Math.max(0,20-(difference*20));
+    }
+  }
+
+  if(prefs.area){
+    total+=15;
+
+    if(land.size>=prefs.area){
+      score+=15;
+    }else{
+      score+=Math.max(0,15-((
+        prefs.area-land.size
+      )/prefs.area*15));
+    }
+  }
+
+  total+=5;
+  score+=Math.min(5,(land.score||80)/20);
+
+  return Math.round(
+    Math.max(0,Math.min(100,(score/total)*100))
+  );
+}
+
+
+/* =========================================================
+   WHY THIS LAND
+========================================================= */
+
+function getReasons(land,prefs=currentPreferences){
+
+  const reasons=[];
+
+  if(!prefs){
+    reasons.push(
+      `درجة دليلي الأساسية لهذه الأرض ${land.score}/100.`
+    );
+
+    reasons.push(
+      `مناسبة للاستخدام: ${land.purpose}.`
+    );
+
+    reasons.push(
+      `مساحة الأرض ${number(land.size)} م².`
+    );
+
+    return reasons;
+  }
+
+  if(prefs.wilayat && land.wilayat===prefs.wilayat){
+    reasons.push("تقع في الولاية التي اخترتها.");
+  }
+
+  if(prefs.type && land.type===prefs.type){
+    reasons.push("نوع الأرض يطابق اختيارك.");
+  }
+
+  if(prefs.purpose && land.purpose===prefs.purpose){
+    reasons.push("الاستخدام المقترح يناسب هدفك.");
+  }
+
+  if(prefs.budget && land.price<=prefs.budget){
+    reasons.push("سعر الأرض داخل ميزانيتك.");
+  }
+
+  if(prefs.area && land.size>=prefs.area){
+    reasons.push("مساحة الأرض تلبي المساحة التي طلبتها.");
+  }
+
+  if(!reasons.length){
+    reasons.push("هذه الأرض قريبة من بعض متطلباتك.");
+  }
+
+  return reasons;
+}
+
+
+/* =========================================================
+   RENDER LANDS
+========================================================= */
+
+function renderLands(list=visibleLands){
+
+  const grid=document.getElementById("landsGrid");
+
+  grid.innerHTML="";
+
+  document.getElementById("resultsCount").textContent =
+    `${list.length} أرض متاحة`;
+
+  if(!list.length){
+
+    grid.innerHTML=`
+      <div class="empty" style="grid-column:1/-1">
+        <div style="font-size:40px">🔎</div>
+        <h3>لم نعثر على أرض بهذه المواصفات</h3>
+        <p>جربي تعديل الفلاتر أو استخدام «ساعدني أختار».</p>
+      </div>
+    `;
 
     return;
   }
 
+  list.forEach(land=>{
 
-  container.innerHTML = data.map(land => `
+    const score=calculateSmartScore(land,currentPreferences);
 
-    <div class="land-card">
+    const favorite=favorites.includes(land.id);
 
-      <div class="land-top">
+    const compare=compareList.includes(land.id);
 
-        <h3>${land.location}</h3>
+    const card=document.createElement("article");
 
-        <span>رقم الأرض: ${land.id}</span>
+    card.className="land-card";
+
+    card.innerHTML=`
+
+      <div class="land-image">
+
+        <img
+          src="${getImage(land)}"
+          alt="صورة أرض ${land.id}"
+        >
+
+        <span class="image-badge">
+          ${land.verified ? "✓ موثقة" : "قيد المراجعة"}
+        </span>
+
+        <button
+          class="heart ${favorite ? "active":""}"
+          onclick="toggleFavorite('${land.id}')"
+          title="المفضلة"
+        >
+          ${favorite ? "♥":"♡"}
+        </button>
 
       </div>
 
-
       <div class="land-body">
 
-        <div class="info">
-          <span>السعر</span>
-          <strong>${land.price.toLocaleString()} ر.ع</strong>
+        <div class="land-title">
+
+          <h3>${land.wilayat} / ${land.area}</h3>
+
+          <span class="land-id">
+            ${land.id}
+          </span>
+
         </div>
 
-        <div class="info">
-          <span>المساحة</span>
-          <strong>${land.area} م²</strong>
+        <div class="location">
+          📍 ${land.wilayat} — ${land.area}
         </div>
 
-        <div class="info">
-          <span>النوع</span>
-          <strong>${land.type}</strong>
+        <div class="land-price">
+          ${money(land.price)}
         </div>
 
-        <div class="info">
-          <span>الاستخدام</span>
-          <strong>${land.purpose}</strong>
+        <div class="details-grid">
+
+          <div class="detail-item">
+            <span>المساحة</span>
+            <strong>${number(land.size)} م²</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>النوع</span>
+            <strong>${land.type}</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>الاستخدام</span>
+            <strong>${land.purpose}</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>الطريق</span>
+            <strong>${land.streetType || "غير محدد"}</strong>
+          </div>
+
         </div>
 
+        <div class="match-row">
 
-        <span class="score">
-          ⭐ درجة دليلي ${land.score}/100
-        </span>
+          <span class="smart-score">
+            ⭐ درجة دليلي: ${score}/100
+          </span>
 
+          <span class="suitable">
+            مناسبة لي
+          </span>
 
-        <p class="area-description">
-          ${land.description}
-        </p>
+        </div>
 
-
-        <div class="card-buttons">
+        <div class="card-actions">
 
           <button
-            class="btn"
-            onclick="openMap('${land.map}')">
-            📍 الخريطة
+            class="btn btn-main"
+            onclick="openDetails('${land.id}')"
+          >
+            التفاصيل
+          </button>
+
+          <button
+            class="btn ${compare ? "btn-gold":"btn-light"}"
+            onclick="toggleCompare('${land.id}')"
+          >
+            ${compare ? "✓ مقارنة":"⚖️ قارن"}
           </button>
 
         </div>
 
       </div>
+    `;
 
-    </div>
+    grid.appendChild(card);
 
-  `).join("");
-
-}
-
-
-function filterLands(){
-
-  const wilayat =
-    document.getElementById("wilayat").value;
-
-  const areaName =
-    document.getElementById("areaName").value
-    .trim()
-    .toLowerCase();
-
-  const type =
-    document.getElementById("type").value;
-
-  const purpose =
-    document.getElementById("purpose").value;
-
-  const minPrice =
-    Number(document.getElementById("minPrice").value);
-
-  const maxPrice =
-    Number(document.getElementById("maxPrice").value);
-
-  const minArea =
-    Number(document.getElementById("minArea").value);
-
-  const maxArea =
-    Number(document.getElementById("maxArea").value);
-
-
-  const filtered = lands.filter(land =>
-
-    (!wilayat ||
-      land.wilayat === wilayat) &&
-
-    (!areaName ||
-      land.areaName.toLowerCase().includes(areaName)) &&
-
-    (!type ||
-      land.type === type) &&
-
-    (!purpose ||
-      land.purpose === purpose) &&
-
-    (!minPrice ||
-      land.price >= minPrice) &&
-
-    (!maxPrice ||
-      land.price <= maxPrice) &&
-
-    (!minArea ||
-      land.area >= minArea) &&
-
-    (!maxArea ||
-      land.area <= maxArea)
-
-  );
-
-
-  displayLands(filtered);
+  });
 
 }
 
 
-function closestMatch(){
+/* =========================================================
+   SEARCH
+========================================================= */
 
-  const wilayat =
-    document.getElementById("wilayat").value;
+function searchLands(){
 
-  const type =
-    document.getElementById("type").value;
+  const wilayat=document.getElementById("wilayatFilter").value;
+  const area=document.getElementById("areaFilter").value.trim().toLowerCase();
+  const type=document.getElementById("typeFilter").value;
+  const purpose=document.getElementById("purposeFilter").value;
 
-  const purpose =
-    document.getElementById("purpose").value;
+  const minPrice=Number(document.getElementById("minPrice").value)||0;
+  const maxPrice=Number(document.getElementById("maxPrice").value)||Infinity;
 
-  const minPrice =
-    Number(document.getElementById("minPrice").value);
+  const minArea=Number(document.getElementById("minArea").value)||0;
+  const maxArea=Number(document.getElementById("maxArea").value)||Infinity;
 
-  const maxPrice =
-    Number(document.getElementById("maxPrice").value);
+  visibleLands=allApprovedLands.filter(land=>{
 
-  const minArea =
-    Number(document.getElementById("minArea").value);
+    return (
 
-  const maxArea =
-    Number(document.getElementById("maxArea").value);
+      (!wilayat || land.wilayat===wilayat)
 
+      &&
 
-  let results = lands.filter(land =>
+      (!area ||
+       land.area.toLowerCase().includes(area))
 
-    (!wilayat ||
-      land.wilayat === wilayat) &&
+      &&
 
-    (!type ||
-      land.type === type) &&
+      (!type || land.type===type)
 
-    (!purpose ||
-      land.purpose === purpose) &&
+      &&
 
-    (!minPrice ||
-      land.price >= minPrice) &&
+      (!purpose || land.purpose===purpose)
 
-    (!maxPrice ||
-      land.price <= maxPrice) &&
+      &&
 
-    (!minArea ||
-      land.area >= minArea) &&
+      land.price>=minPrice
+      && land.price<=maxPrice
 
-    (!maxArea ||
-      land.area <= maxArea)
+      &&
 
-  );
+      land.size>=minArea
+      && land.size<=maxArea
 
+    );
 
-  results.sort((a,b) => b.score - a.score);
+  });
 
-  displayLands(results);
+  renderLands();
+
+  document.querySelector(".results-head")
+    .scrollIntoView({behavior:"smooth"});
 
 }
 
+
+/* =========================================================
+   RESET
+========================================================= */
 
 function resetFilters(){
 
-  document.getElementById("wilayat").value="";
-  document.getElementById("areaName").value="";
-  document.getElementById("type").value="";
-  document.getElementById("purpose").value="";
+  document.getElementById("wilayatFilter").value="";
+  document.getElementById("areaFilter").value="";
+  document.getElementById("typeFilter").value="";
+  document.getElementById("purposeFilter").value="";
   document.getElementById("minPrice").value="";
   document.getElementById("maxPrice").value="";
   document.getElementById("minArea").value="";
   document.getElementById("maxArea").value="";
 
-  displayLands(lands);
+  currentPreferences=null;
+
+  visibleLands=[...allApprovedLands];
+
+  renderLands();
 
 }
 
 
-function openMap(url){
+/* =========================================================
+   SORT
+========================================================= */
 
-  window.open(url,"_blank");
+function applySort(){
 
-}
+  const type=document.getElementById("sortSelect").value;
 
+  let list=[...visibleLands];
 
-function submitLand(){
-
-  const id =
-    document.getElementById("newId").value.trim();
-
-  const wilayat =
-    document.getElementById("newWilayat").value;
-
-  const areaName =
-    document.getElementById("newArea").value.trim();
-
-  const price =
-    Number(document.getElementById("newPrice").value);
-
-  const area =
-    Number(document.getElementById("newSize").value);
-
-  const type =
-    document.getElementById("newType").value;
-
-  const purpose =
-    document.getElementById("newPurpose").value;
-
-  const phone =
-    document.getElementById("newPhone").value.trim();
-
-  const description =
-    document.getElementById("newDescription").value.trim();
-
-  const map =
-    document.getElementById("newMap").value.trim();
-
-
-  if(
-    !id ||
-    !wilayat ||
-    !areaName ||
-    !price ||
-    !area ||
-    !type ||
-    !purpose ||
-    !phone
-  ){
-
-    alert("يرجى تعبئة البيانات الأساسية المطلوبة.");
-
-    return;
+  if(type==="score"){
+    list.sort((a,b)=>
+      calculateSmartScore(b,currentPreferences)
+      -
+      calculateSmartScore(a,currentPreferences)
+    );
   }
 
+  if(type==="priceLow"){
+    list.sort((a,b)=>a.price-b.price);
+  }
 
-  const request = {
+  if(type==="priceHigh"){
+    list.sort((a,b)=>b.price-a.price);
+  }
 
-    id:id,
+  if(type==="areaHigh"){
+    list.sort((a,b)=>b.size-a.size);
+  }
 
-    location:
-      wilayat + " / " + areaName,
+  renderLands(list);
 
-    wilayat:wilayat,
+}
 
-    areaName:areaName,
 
-    price:price,
+function sortByMatch(){
 
-    area:area,
+  currentPreferences = {
 
-    type:type,
+    wilayat:document.getElementById("wilayatFilter").value,
 
-    purpose:purpose,
+    type:document.getElementById("typeFilter").value,
 
-    phone:phone,
+    purpose:document.getElementById("purposeFilter").value,
 
-    description:description,
+    budget:Number(document.getElementById("maxPrice").value)||0,
 
-    map:map,
-
-    status:"قيد المراجعة"
+    area:Number(document.getElementById("minArea").value)||0
 
   };
 
+  visibleLands.sort((a,b)=>
+    calculateSmartScore(b,currentPreferences)
+    -
+    calculateSmartScore(a,currentPreferences)
+  );
 
-  pendingRequests.push(request);
+  renderLands();
 
-  renderRequests();
-
-
-  const status =
-    document.getElementById("submitStatus");
-
-
-  status.style.display="block";
-
-  status.innerHTML =
-    "🕐 تم إرسال طلبك بنجاح. الطلب الآن <strong>قيد المراجعة</strong>، ولن تظهر بيانات الأرض أو رقم الهاتف للزوار حتى تتم الموافقة من دليلي.";
-
-
-  document.getElementById("newId").value="";
-  document.getElementById("newWilayat").value="";
-  document.getElementById("newArea").value="";
-  document.getElementById("newPrice").value="";
-  document.getElementById("newSize").value="";
-  document.getElementById("newType").value="";
-  document.getElementById("newPurpose").value="";
-  document.getElementById("newPhone").value="";
-  document.getElementById("newDescription").value="";
-  document.getElementById("newMap").value="";
+  showToast("تم ترتيب الأراضي حسب الأقرب لمتطلباتك ⭐");
 
 }
 
 
-function renderRequests(){
+/* =========================================================
+   DETAILS
+========================================================= */
 
-  const container =
-    document.getElementById("requests");
+function openDetails(id){
+
+  const land=getLand(id);
+
+  if(!land) return;
+
+  const score=calculateSmartScore(
+    land,
+    currentPreferences
+  );
+
+  const reasons=getReasons(
+    land,
+    currentPreferences
+  );
+
+  const favorite=favorites.includes(land.id);
+
+  let gallery="";
+
+  land.images.forEach((img,index)=>{
+
+    gallery+=`
+      <div
+        class="thumb ${index===0?"active":""}"
+        onclick="changeMainImage('${img}',this)"
+      >
+        <img src="${img}" alt="صورة">
+      </div>
+    `;
+
+  });
+
+  document.getElementById("detailsContent").innerHTML=`
+
+    <div class="modal-title">
+
+      <h2>
+        ${land.wilayat} / ${land.area}
+      </h2>
+
+      <p>
+        رقم الأرض: ${land.id}
+        ${land.verified ? " · ✓ موثقة من دليلي":""}
+      </p>
+
+    </div>
+
+    <div class="gallery-main">
+      <img
+        id="mainGalleryImage"
+        src="${getImage(land)}"
+        alt="صورة الأرض"
+      >
+    </div>
+
+    <div class="thumbs">
+      ${gallery}
+    </div>
+
+    <div class="detail-modal-grid">
+
+      <div class="big-detail">
+        <span>السعر</span>
+        <strong>${money(land.price)}</strong>
+      </div>
+
+      <div class="big-detail">
+        <span>المساحة</span>
+        <strong>${number(land.size)} م²</strong>
+      </div>
+
+      <div class="big-detail">
+        <span>نوع الأرض</span>
+        <strong>${land.type}</strong>
+      </div>
+
+      <div class="big-detail">
+        <span>الاستخدام</span>
+        <strong>${land.purpose}</strong>
+      </div>
+
+      <div class="big-detail">
+        <span>الولاية</span>
+        <strong>${land.wilayat}</strong>
+      </div>
+
+      <div class="big-detail">
+        <span>المنطقة</span>
+        <strong>${land.area}</strong>
+      </div>
+
+      <div class="big-detail">
+        <span>نوع الشارع</span>
+        <strong>${land.streetType || "غير محدد"}</strong>
+      </div>
+
+      <div class="big-detail">
+        <span>درجة دليلي الذكية</span>
+        <strong>⭐ ${score}/100</strong>
+      </div>
+
+      <div class="big-detail">
+        <span>الحالة</span>
+        <strong>${land.verified ? "✓ معتمدة":"قيد المراجعة"}</strong>
+      </div>
+
+    </div>
+
+    <div class="reason-box">
+
+      <h3>⭐ لماذا اخترنا هذه الأرض؟</h3>
+
+      <ul class="reason-list">
+
+        ${reasons.map(r=>`<li>${r}</li>`).join("")}
+
+      </ul>
+
+    </div>
+
+    <div class="description">
+
+      <strong>عن المنطقة</strong>
+
+      <p>
+        ${land.areaDescription}
+      </p>
+
+      <p style="margin-top:8px;color:var(--muted)">
+        <strong>الخدمات القريبة:</strong>
+        ${land.nearbyServices}
+      </p>
+
+    </div>
+
+    <div class="modal-actions">
+
+      <button
+        class="btn btn-main"
+        onclick="window.open('${land.map}','_blank')"
+      >
+        📍 عرض الموقع
+      </button>
+
+      <button
+        class="btn ${favorite?"btn-gold":"btn-light"}"
+        onclick="toggleFavorite('${land.id}');openDetails('${land.id}')"
+      >
+        ${favorite?"♥ محفوظة":"♡ حفظ في المفضلة"}
+      </button>
+
+      <button
+        class="btn btn-light"
+        onclick="toggleCompare('${land.id}')"
+      >
+        ⚖️ ${compareList.includes(land.id)?"إزالة من المقارنة":"إضافة للمقارنة"}
+      </button>
+
+      ${
+        land.verified && land.phone
+        ?
+        `<button
+          class="btn btn-gold"
+          onclick="showToast('رقم التواصل: ${land.phone}')"
+        >
+          📞 تواصل مع المعلن
+        </button>`
+        :
+        `<span style="padding:10px;color:var(--muted);font-size:13px">
+          🔒 بيانات التواصل تظهر فقط بعد اعتماد الأرض.
+        </span>`
+      }
+
+    </div>
+
+  `;
+
+  openModal("detailsModal");
+
+}
 
 
-  if(pendingRequests.length===0){
+function changeMainImage(src,element){
 
-    container.innerHTML =
-      '<div class="empty">لا توجد طلبات جديدة حاليًا.</div>';
+  document.getElementById("mainGalleryImage").src=src;
+
+  document.querySelectorAll(".thumb")
+    .forEach(t=>t.classList.remove("active"));
+
+  element.classList.add("active");
+
+}
+
+
+/* =========================================================
+   FAVORITES
+========================================================= */
+
+function toggleFavorite(id){
+
+  if(favorites.includes(id)){
+
+    favorites=favorites.filter(x=>x!==id);
+
+    showToast("تمت إزالة الأرض من المفضلة");
+
+  }else{
+
+    favorites.push(id);
+
+    showToast("تم حفظ الأرض في المفضلة ❤️");
+
+  }
+
+  localStorage.setItem(
+    "daliliFavorites",
+    JSON.stringify(favorites)
+  );
+
+  updateCounts();
+
+  renderLands();
+
+}
+
+
+function renderFavorites(){
+
+  const container=document.getElementById("favoritesContent");
+
+  const selected=allApprovedLands.filter(
+    l=>favorites.includes(l.id)
+  );
+
+  if(!selected.length){
+
+    container.innerHTML=`
+      <div class="empty">
+        ❤️
+        <h3>لا توجد أراضٍ محفوظة</h3>
+        <p>اضغط على القلب في أي بطاقة لحفظ الأرض.</p>
+      </div>
+    `;
 
     return;
   }
 
+  container.innerHTML=`
 
-  container.innerHTML =
-    pendingRequests.map((request,index)=>`
+    <div class="lands-grid">
 
-      <div class="request">
+      ${selected.map(land=>`
 
-        <h3>${request.location}</h3>
+        <div class="land-card">
 
-        <p>
-          رقم الأرض:
-          ${request.id}
-        </p>
+          <div class="land-image">
 
-        <p>
-          السعر:
-          ${request.price.toLocaleString()}
-          ر.ع
-        </p>
+            <img src="${getImage(land)}">
 
-        <p>
-          المساحة:
-          ${request.area}
-          م²
-        </p>
+          </div>
 
-        <p>
-          النوع:
-          ${request.type}
-        </p>
+          <div class="land-body">
 
-        <p>
-          الاستخدام:
-          ${request.purpose}
-        </p>
+            <h3>${land.wilayat} / ${land.area}</h3>
 
-        <p>
-          الحالة:
-          <strong>${request.status}</strong>
-        </p>
+            <div class="land-price">
+              ${money(land.price)}
+            </div>
 
-        <div class="request-buttons">
+            <div class="card-actions">
+
+              <button
+                class="btn btn-main"
+                onclick="openDetails('${land.id}')"
+              >
+                التفاصيل
+              </button>
+
+              <button
+                class="btn btn-danger"
+                onclick="toggleFavorite('${land.id}');renderFavorites()"
+              >
+                إزالة
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      `).join("")}
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================================================
+   COMPARE
+========================================================= */
+
+function toggleCompare(id){
+
+  if(compareList.includes(id)){
+
+    compareList=
+      compareList.filter(x=>x!==id);
+
+    showToast("تمت إزالة الأرض من المقارنة");
+
+  }else{
+
+    if(compareList.length>=3){
+
+      showToast("يمكنك مقارنة 3 أراضٍ فقط.");
+
+      return;
+    }
+
+    compareList.push(id);
+
+    showToast("تمت إضافة الأرض للمقارنة ⚖️");
+
+  }
+
+  localStorage.setItem(
+    "daliliCompare",
+    JSON.stringify(compareList)
+  );
+
+  updateCounts();
+
+  renderLands();
+
+  renderCompare();
+
+}
+
+
+function renderCompare(){
+
+  const container=document.getElementById("compareContent");
+
+  const selected=compareList
+    .map(id=>getLand(id))
+    .filter(Boolean);
+
+  if(!selected.length){
+
+    container.innerHTML=`
+      <div class="empty">
+        ⚖️
+        <h3>لم تختر أراضي للمقارنة</h3>
+        <p>اضغط «قارن» من بطاقة الأرض.</p>
+      </div>
+    `;
+
+    return;
+  }
+
+  container.innerHTML=`
+
+    <div class="compare-scroll">
+
+      <table class="compare-table">
+
+        <thead>
+
+          <tr>
+
+            <th>المعلومة</th>
+
+            ${selected.map(l=>
+              `<th>${l.wilayat}<br>${l.area}</th>`
+            ).join("")}
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>رقم الأرض</td>
+            ${selected.map(l=>`<td>${l.id}</td>`).join("")}
+          </tr>
+
+          <tr>
+            <td>السعر</td>
+            ${selected.map(l=>`<td>${money(l.price)}</td>`).join("")}
+          </tr>
+
+          <tr>
+            <td>المساحة</td>
+            ${selected.map(l=>`<td>${number(l.size)} م²</td>`).join("")}
+          </tr>
+
+          <tr>
+            <td>النوع</td>
+            ${selected.map(l=>`<td>${l.type}</td>`).join("")}
+          </tr>
+
+          <tr>
+            <td>الاستخدام</td>
+            ${selected.map(l=>`<td>${l.purpose}</td>`).join("")}
+          </tr>
+
+          <tr>
+            <td>الموقع</td>
+            ${selected.map(l=>`<td>${l.wilayat} / ${l.area}</td>`).join("")}
+          </tr>
+
+          <tr>
+            <td>درجة دليلي</td>
+            ${selected.map(l=>
+              `<td>⭐ ${calculateSmartScore(l,currentPreferences)}/100</td>`
+            ).join("")}
+          </tr>
+
+          <tr>
+            <td>الحالة</td>
+            ${selected.map(l=>
+              `<td>${l.verified?"✓ موثقة":"قيد المراجعة"}</td>`
+            ).join("")}
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div class="filter-actions">
+
+      <button
+        class="btn btn-danger"
+        onclick="clearCompare()"
+      >
+        مسح المقارنة
+      </button>
+
+    </div>
+
+  `;
+
+}
+
+
+function clearCompare(){
+
+  compareList=[];
+
+  localStorage.setItem(
+    "daliliCompare",
+    JSON.stringify(compareList)
+  );
+
+  updateCounts();
+
+  renderCompare();
+
+  renderLands();
+
+}
+
+
+/* =========================================================
+   SMART WIZARD
+========================================================= */
+
+function runWizard(){
+
+  const prefs={
+
+    wilayat:document.getElementById("wizWilayat").value,
+
+    type:document.getElementById("wizType").value,
+
+    purpose:document.getElementById("wizPurpose").value,
+
+    budget:Number(document.getElementById("wizBudget").value)||0,
+
+    area:Number(document.getElementById("wizArea").value)||0
+
+  };
+
+  currentPreferences=prefs;
+
+  localStorage.setItem(
+    "daliliPreferences",
+    JSON.stringify(prefs)
+  );
+
+  const ranked=[...allApprovedLands]
+    .map(land=>({
+
+      land,
+
+      score:calculateSmartScore(
+        land,
+        prefs
+      )
+
+    }))
+    .sort((a,b)=>b.score-a.score)
+    .slice(0,5);
+
+  const container=document.getElementById("wizardResults");
+
+  container.innerHTML=`
+
+    <h3 style="color:var(--main);margin-bottom:12px">
+      🎯 أقرب الأراضي لمتطلباتك
+    </h3>
+
+    ${ranked.map(item=>{
+
+      const reasons=getReasons(
+        item.land,
+        prefs
+      );
+
+      return `
+
+        <div class="recommendation">
+
+          <div style="display:flex;justify-content:space-between;gap:10px">
+
+            <div>
+
+              <h4>
+                ${item.land.wilayat} / ${item.land.area}
+              </h4>
+
+              <small>
+                ${money(item.land.price)}
+                ·
+                ${number(item.land.size)} م²
+                ·
+                ${item.land.type}
+              </small>
+
+            </div>
+
+            <strong style="color:var(--main)">
+              ⭐ ${item.score}/100
+            </strong>
+
+          </div>
+
+          <p style="font-size:13px;margin-top:7px">
+            ${reasons[0]}
+          </p>
 
           <button
-            class="btn approve"
-            onclick="approveRequest(${index})">
-            ✅ قبول
+            class="btn btn-light"
+            style="margin-top:8px"
+            onclick="openDetails('${item.land.id}')"
+          >
+            عرض التفاصيل
+          </button>
+
+        </div>
+
+      `;
+
+    }).join("")}
+
+  `;
+
+  visibleLands=allApprovedLands
+    .slice()
+    .sort((a,b)=>
+      calculateSmartScore(b,prefs)
+      -
+      calculateSmartScore(a,prefs)
+    );
+
+  renderLands();
+
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+function toggleNotifications(){
+
+  const enabled=
+    document.getElementById("notificationToggle").checked;
+
+  localStorage.setItem(
+    "daliliNotifications",
+    enabled ? "true":"false"
+  );
+
+  if(enabled){
+
+    showToast("تم تفعيل تنبيهات الأراضي 🔔");
+
+  }else{
+
+    showToast("تم إيقاف التنبيهات");
+
+  }
+
+}
+
+
+function saveNotificationPreferences(){
+
+  const preferences={
+
+    wilayat:document.getElementById("notifyWilayat").value,
+
+    budget:Number(
+      document.getElementById("notifyBudget").value
+    )||0,
+
+    type:document.getElementById("notifyType").value,
+
+    purpose:document.getElementById("notifyPurpose").value
+
+  };
+
+  localStorage.setItem(
+    "daliliNotificationPreferences",
+    JSON.stringify(preferences)
+  );
+
+  localStorage.setItem(
+    "daliliNotifications",
+    "true"
+  );
+
+  document.getElementById("notificationToggle").checked=true;
+
+  closeModal("notifyModal");
+
+  showToast("تم حفظ تفضيلات التنبيهات 🔔");
+
+}
+
+
+/* =========================================================
+   ADD LAND
+========================================================= */
+
+document.getElementById("addLandForm")
+.addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  const request={
+
+    id:document.getElementById("newId").value.trim(),
+
+    wilayat:document.getElementById("newWilayat").value.trim(),
+
+    area:document.getElementById("newAreaName").value.trim(),
+
+    price:Number(
+      document.getElementById("newPrice").value
+    ),
+
+    size:Number(
+      document.getElementById("newSize").value
+    ),
+
+    type:document.getElementById("newType").value,
+
+    purpose:document.getElementById("newPurpose").value,
+
+    phone:document.getElementById("newPhone").value,
+
+    areaDescription:
+      document.getElementById("newDescription").value
+      ||
+      "لم تتم إضافة وصف.",
+
+    nearbyServices:"سيتم التحقق منها من فريق دليلي.",
+
+    streetType:"سيتم التحقق منها.",
+
+    map:
+      document.getElementById("newMap").value
+      ||
+      "https://maps.google.com",
+
+    images:[
+      document.getElementById("newImage").value
+      ||
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80"
+    ],
+
+    score:0,
+
+    verified:false,
+
+    status:"pending"
+
+  };
+
+  pendingRequests.push(request);
+
+  localStorage.setItem(
+    "daliliPending",
+    JSON.stringify(pendingRequests)
+  );
+
+  document.getElementById("addLandForm").reset();
+
+  closeModal("addModal");
+
+  showToast(
+    "تم إرسال الأرض لفريق دليلي للمراجعة ✓"
+  );
+
+});
+
+
+/* =========================================================
+   ADMIN DEMO
+========================================================= */
+
+/*
+  مهم:
+  قسم الإدارة غير ظاهر للزوار.
+
+  للعرض التجريبي فقط:
+  افتحي الموقع ثم أضيفي #admin في نهاية الرابط.
+
+  هذا ليس نظام حماية حقيقي.
+  عند تحويل دليلي إلى نظام فعلي سنستخدم
+  تسجيل دخول وصلاحيات وقاعدة بيانات.
+*/
+
+function renderAdmin(){
+
+  const container=
+    document.getElementById("adminRequests");
+
+  if(!pendingRequests.length){
+
+    container.innerHTML=`
+      <div class="empty">
+        لا توجد طلبات جديدة حالياً.
+      </div>
+    `;
+
+    return;
+  }
+
+  container.innerHTML=
+
+    pendingRequests.map((request,index)=>`
+
+      <div class="request-card">
+
+        <h3 style="color:var(--main)">
+          ${request.wilayat} / ${request.area}
+        </h3>
+
+        <p>
+          رقم الأرض: ${request.id}
+        </p>
+
+        <p>
+          السعر: ${money(request.price)}
+          · المساحة: ${number(request.size)} م²
+        </p>
+
+        <p>
+          النوع: ${request.type}
+          · الاستخدام: ${request.purpose}
+        </p>
+
+        <p>
+          📞 رقم المعلن:
+          <strong>${request.phone}</strong>
+        </p>
+
+        <div class="request-actions">
+
+          <button
+            class="btn btn-main"
+            onclick="approveRequest(${index})"
+          >
+            ✓ اعتماد الأرض
           </button>
 
           <button
-            class="btn reject"
-            onclick="rejectRequest(${index})">
-            ❌ رفض
+            class="btn btn-danger"
+            onclick="rejectRequest(${index})"
+          >
+            رفض
           </button>
 
         </div>
@@ -1314,50 +3314,41 @@ function renderRequests(){
 
 function approveRequest(index){
 
-  const request =
-    pendingRequests[index];
+  const request=pendingRequests[index];
 
+  if(!request) return;
 
-  lands.push({
+  request.verified=true;
 
-    id:request.id,
+  request.status="approved";
 
-    location:request.location,
+  request.score=85;
 
-    wilayat:request.wilayat,
+  approvedUserLands.push(request);
 
-    areaName:request.areaName,
-
-    price:request.price,
-
-    area:request.area,
-
-    type:request.type,
-
-    purpose:request.purpose,
-
-    score:90,
-
-    description:
-      request.description ||
-      "لا يوجد وصف للمنطقة.",
-
-    map:
-      request.map ||
-      "https://maps.google.com"
-
-  });
-
+  allApprovedLands=[
+    ...lands,
+    ...approvedUserLands
+  ];
 
   pendingRequests.splice(index,1);
 
-  renderRequests();
+  localStorage.setItem(
+    "daliliPending",
+    JSON.stringify(pendingRequests)
+  );
 
-  displayLands(lands);
+  localStorage.setItem(
+    "daliliApproved",
+    JSON.stringify(approvedUserLands)
+  );
 
+  renderAdmin();
 
-  alert(
-    "تم قبول الأرض وإضافتها إلى قائمة الأراضي."
+  renderLands();
+
+  showToast(
+    "تم اعتماد الأرض وأصبحت ظاهرة للزوار ✓"
   );
 
 }
@@ -1367,18 +3358,126 @@ function rejectRequest(index){
 
   pendingRequests.splice(index,1);
 
-  renderRequests();
+  localStorage.setItem(
+    "daliliPending",
+    JSON.stringify(pendingRequests)
+  );
 
-  alert(
-    "تم رفض الطلب ولن تظهر الأرض للزوار."
+  renderAdmin();
+
+  showToast(
+    "تم رفض طلب الأرض"
   );
 
 }
 
 
-displayLands(lands);
+/* =========================================================
+   COUNTS
+========================================================= */
 
-renderRequests();
+function updateCounts(){
+
+  document.getElementById("favCount")
+    .textContent=favorites.length;
+
+  document.getElementById("compareCount")
+    .textContent=compareList.length;
+
+}
+
+
+/* =========================================================
+   ADMIN ROUTE
+========================================================= */
+
+function checkAdminRoute(){
+
+  /*
+    الإدارة لا تظهر للزوار.
+    تظهر فقط عند استخدام #admin للعرض التجريبي.
+  */
+
+  const adminSection=
+    document.getElementById("adminSection");
+
+  if(location.hash==="#admin"){
+
+    adminSection.style.display="block";
+
+    renderAdmin();
+
+    adminSection.scrollIntoView({
+      behavior:"smooth"
+    });
+
+  }else{
+
+    adminSection.style.display="none";
+
+  }
+
+}
+
+
+/* =========================================================
+   LOAD SAVED SETTINGS
+========================================================= */
+
+function loadSavedSettings(){
+
+  const notifications=
+    localStorage.getItem("daliliNotifications");
+
+  if(notifications==="true"){
+
+    document.getElementById(
+      "notificationToggle"
+    ).checked=true;
+
+  }
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+updateCounts();
+
+loadSavedSettings();
+
+checkAdminRoute();
+
+renderLands();
+
+
+window.addEventListener(
+  "hashchange",
+  checkAdminRoute
+);
+
+
+/* =========================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+========================================================= */
+
+document.querySelectorAll(".modal")
+.forEach(modal=>{
+
+  modal.addEventListener("click",function(e){
+
+    if(e.target===modal){
+
+      modal.classList.remove("show");
+
+    }
+
+  });
+
+});
+
 
 </script>
 
