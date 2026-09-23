@@ -15,19 +15,20 @@
 :root{
   --main:#173f3b;
   --main2:#245b54;
-  --light:#eef5f3;
+  --light:#f5eee2;
+  --cream:#fbf7f0;
   --gold:#c99b45;
   --text:#243331;
   --muted:#71807d;
   --white:#ffffff;
-  --border:#dfe8e5;
+  --border:#e5d9c8;
   --danger:#b94a48;
   --shadow:0 12px 35px rgba(20,55,50,.10);
 }
 
 body{
   font-family:Tahoma,Arial,sans-serif;
-  background:#f7faf9;
+  background:#fbf7f0;
   color:var(--text);
   line-height:1.7;
 }
@@ -51,7 +52,7 @@ a{
 /* HEADER */
 
 header{
-  background:rgba(255,255,255,.97);
+  background:rgba(255,250,242,.97);
   border-bottom:1px solid var(--border);
   position:sticky;
   top:0;
@@ -112,7 +113,7 @@ header{
 
 .nav-btn{
   border:1px solid var(--border);
-  background:white;
+  background:#fffaf2;
   color:var(--main);
   padding:10px 15px;
   border-radius:12px;
@@ -199,7 +200,7 @@ header{
 /* SEARCH */
 
 .search-box{
-  background:white;
+  background:#f5eee2;
   border:1px solid var(--border);
   border-radius:24px;
   padding:25px;
@@ -228,10 +229,10 @@ header{
 .field textarea{
   width:100%;
   padding:12px 13px;
-  border:1px solid var(--border);
+  border:1px solid #dfd2c0;
   border-radius:11px;
   outline:none;
-  background:#fbfdfc;
+  background:#fffaf3;
 }
 
 .field input:focus,
@@ -266,7 +267,7 @@ header{
 }
 
 .btn-light{
-  background:var(--light);
+  background:#eadfce;
   color:var(--main);
 }
 
@@ -290,12 +291,18 @@ header{
 }
 
 .quick-card{
-  background:white;
+  background:#f5eee2;
   border:1px solid var(--border);
   border-radius:18px;
   padding:22px;
   text-align:center;
   box-shadow:0 7px 20px rgba(20,55,50,.05);
+  transition:.2s;
+}
+
+.quick-card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--shadow);
 }
 
 .quick-card .icon{
@@ -303,7 +310,7 @@ header{
   height:48px;
   margin:0 auto 10px;
   border-radius:15px;
-  background:var(--light);
+  background:#eadfce;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -339,7 +346,7 @@ header{
   padding:10px;
   border:1px solid var(--border);
   border-radius:10px;
-  background:white;
+  background:#fffaf3;
 }
 
 .lands-grid{
@@ -351,7 +358,7 @@ header{
 /* LAND CARD */
 
 .land-card{
-  background:white;
+  background:#f5eee2;
   border:1px solid var(--border);
   border-radius:20px;
   overflow:hidden;
@@ -369,7 +376,7 @@ header{
   height:185px;
   position:relative;
   overflow:hidden;
-  background:#dfe9e6;
+  background:#eadfce;
 }
 
 .land-image img{
@@ -387,7 +394,7 @@ header{
   position:absolute;
   top:12px;
   right:12px;
-  background:rgba(255,255,255,.94);
+  background:rgba(255,250,242,.94);
   color:var(--main);
   padding:5px 10px;
   border-radius:20px;
@@ -403,7 +410,7 @@ header{
   height:38px;
   border:none;
   border-radius:50%;
-  background:rgba(255,255,255,.94);
+  background:rgba(255,250,242,.94);
   font-size:20px;
   color:#687572;
   z-index:3;
@@ -455,7 +462,7 @@ header{
 }
 
 .detail-item{
-  background:#f6f9f8;
+  background:#fffaf3;
   border-radius:9px;
   padding:7px 9px;
   font-size:12px;
@@ -479,7 +486,7 @@ header{
 }
 
 .smart-score{
-  background:#edf6f3;
+  background:#e8f0e8;
   color:var(--main);
   border-radius:10px;
   padding:6px 9px;
@@ -489,7 +496,7 @@ header{
 
 .suitable{
   color:#8a6926;
-  background:#fff7e6;
+  background:#f3e5c9;
   border-radius:10px;
   padding:6px 9px;
   font-size:11px;
@@ -532,7 +539,7 @@ header{
   width:min(950px,100%);
   max-height:94vh;
   overflow:auto;
-  background:white;
+  background:#f5eee2;
   border-radius:25px;
   position:relative;
   padding:28px;
@@ -546,7 +553,7 @@ header{
   height:38px;
   border:none;
   border-radius:50%;
-  background:#f0f4f2;
+  background:#eadfce;
   color:var(--main);
   font-size:22px;
   z-index:5;
@@ -570,7 +577,7 @@ header{
   height:330px;
   border-radius:18px;
   overflow:hidden;
-  background:#eef4f2;
+  background:#eadfce;
 }
 
 .gallery-main img{
@@ -614,7 +621,7 @@ header{
 }
 
 .big-detail{
-  background:#f6f9f8;
+  background:#fffaf3;
   padding:13px;
   border-radius:12px;
 }
@@ -659,7 +666,7 @@ header{
 }
 
 .description{
-  background:#fafcfb;
+  background:#fffaf3;
   border:1px solid var(--border);
   padding:16px;
   border-radius:13px;
@@ -686,8 +693,8 @@ header{
 }
 
 .recommendation{
-  background:#f5faf8;
-  border:1px solid #dcebe6;
+  background:#fffaf3;
+  border:1px solid var(--border);
   border-radius:15px;
   padding:15px;
   margin-bottom:10px;
@@ -707,7 +714,7 @@ header{
   text-align:center;
   padding:45px 20px;
   color:var(--muted);
-  background:white;
+  background:#f5eee2;
   border-radius:18px;
   border:1px dashed var(--border);
 }
@@ -728,8 +735,12 @@ header{
 }
 
 .compare-table th{
-  background:var(--light);
+  background:#eadfce;
   color:var(--main);
+}
+
+.compare-table td{
+  background:#fffaf3;
 }
 
 .compare-scroll{
@@ -739,7 +750,7 @@ header{
 /* NOTIFICATION */
 
 .notification-box{
-  background:white;
+  background:#f5eee2;
   border:1px solid var(--border);
   border-radius:20px;
   padding:22px;
@@ -819,13 +830,14 @@ header{
 }
 
 .admin-panel{
-  background:#fff;
-  border:2px solid #e8dfc8;
+  background:#f5eee2;
+  border:2px solid #e5d9c8;
   border-radius:20px;
   padding:22px;
 }
 
 .request-card{
+  background:#fffaf3;
   border:1px solid var(--border);
   border-radius:15px;
   padding:16px;
@@ -956,8 +968,6 @@ footer{
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header>
   <div class="navbar">
 
@@ -992,9 +1002,6 @@ footer{
   </div>
 </header>
 
-
-<!-- ================= HERO ================= -->
-
 <section class="hero">
   <div class="hero-content">
 
@@ -1008,9 +1015,6 @@ footer{
 
   </div>
 </section>
-
-
-<!-- ================= SEARCH ================= -->
 
 <main class="container">
 
@@ -1115,9 +1119,6 @@ footer{
 
 </section>
 
-
-<!-- ================= QUICK FEATURES ================= -->
-
 <section class="quick-grid">
 
   <div class="quick-card" onclick="openModal('wizardModal')">
@@ -1146,9 +1147,6 @@ footer{
 
 </section>
 
-
-<!-- ================= RESULTS ================= -->
-
 <section>
 
   <div class="results-head">
@@ -1173,9 +1171,6 @@ footer{
   <div id="landsGrid" class="lands-grid"></div>
 
 </section>
-
-
-<!-- ================= NOTIFICATION SECTION ================= -->
 
 <section style="margin-top:45px">
 
@@ -1203,26 +1198,14 @@ footer{
 
 </main>
 
-
-<!-- ================= LAND DETAILS MODAL ================= -->
-
 <div class="modal" id="detailsModal">
-
   <div class="modal-box">
-
     <button class="close" onclick="closeModal('detailsModal')">×</button>
-
     <div id="detailsContent"></div>
-
   </div>
-
 </div>
 
-
-<!-- ================= WIZARD MODAL ================= -->
-
 <div class="modal" id="wizardModal">
-
   <div class="modal-box">
 
     <button class="close" onclick="closeModal('wizardModal')">×</button>
@@ -1304,14 +1287,9 @@ footer{
     <div id="wizardResults" class="wizard-result"></div>
 
   </div>
-
 </div>
 
-
-<!-- ================= FAVORITES MODAL ================= -->
-
 <div class="modal" id="favoritesModal">
-
   <div class="modal-box">
 
     <button class="close" onclick="closeModal('favoritesModal')">×</button>
@@ -1324,14 +1302,9 @@ footer{
     <div id="favoritesContent"></div>
 
   </div>
-
 </div>
 
-
-<!-- ================= COMPARE MODAL ================= -->
-
 <div class="modal" id="compareModal">
-
   <div class="modal-box">
 
     <button class="close" onclick="closeModal('compareModal')">×</button>
@@ -1344,14 +1317,9 @@ footer{
     <div id="compareContent"></div>
 
   </div>
-
 </div>
 
-
-<!-- ================= NOTIFICATION MODAL ================= -->
-
 <div class="modal" id="notifyModal">
-
   <div class="modal-box">
 
     <button class="close" onclick="closeModal('notifyModal')">×</button>
@@ -1417,14 +1385,9 @@ footer{
     </div>
 
   </div>
-
 </div>
 
-
-<!-- ================= ADD LAND MODAL ================= -->
-
 <div class="modal" id="addModal">
-
   <div class="modal-box">
 
     <button class="close" onclick="closeModal('addModal')">×</button>
@@ -1530,11 +1493,7 @@ footer{
     </form>
 
   </div>
-
 </div>
-
-
-<!-- ================= ADMIN ================= -->
 
 <section id="adminSection" class="container admin-only">
 
@@ -1551,9 +1510,6 @@ footer{
   </div>
 
 </section>
-
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1574,9 +1530,7 @@ footer{
 
 </footer>
 
-
 <div id="toast" class="toast"></div>
-
 
 <script>
 
@@ -1587,20 +1541,10 @@ footer{
 const lands = [
 
 {
- id:"D001",
- wilayat:"السيب",
- area:"المعبيلة",
- price:36000,
- size:600,
- type:"سكنية",
- purpose:"بناء منزل",
- score:92,
- verified:true,
- phone:"",
- streetType:"شارع رئيسي",
+ id:"D001",wilayat:"السيب",area:"المعبيلة",price:36000,size:600,type:"سكنية",
+ purpose:"بناء منزل",score:92,verified:true,phone:"",streetType:"شارع رئيسي",
  areaDescription:"منطقة سكنية مناسبة لبناء منزل وقريبة من الخدمات الأساسية.",
- nearbyServices:"محلات، مدارس، مساجد، طرق رئيسية",
- map:"https://maps.google.com",
+ nearbyServices:"محلات، مدارس، مساجد، طرق رئيسية",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
@@ -1609,20 +1553,10 @@ const lands = [
 },
 
 {
- id:"D002",
- wilayat:"السيب",
- area:"الخوض",
- price:48000,
- size:750,
- type:"سكنية",
- purpose:"بناء منزل",
- score:90,
- verified:true,
- phone:"",
- streetType:"شارع فرعي",
+ id:"D002",wilayat:"السيب",area:"الخوض",price:48000,size:750,type:"سكنية",
+ purpose:"بناء منزل",score:90,verified:true,phone:"",streetType:"شارع فرعي",
  areaDescription:"منطقة سكنية حيوية ومناسبة للعائلات.",
- nearbyServices:"جامعات، مدارس، مطاعم، محلات",
- map:"https://maps.google.com",
+ nearbyServices:"جامعات، مدارس، مطاعم، محلات",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80"
@@ -1630,20 +1564,10 @@ const lands = [
 },
 
 {
- id:"D003",
- wilayat:"السيب",
- area:"الموالح",
- price:65000,
- size:900,
- type:"تجارية",
- purpose:"مشروع تجاري",
- score:94,
- verified:true,
- phone:"",
- streetType:"شارع تجاري",
+ id:"D003",wilayat:"السيب",area:"الموالح",price:65000,size:900,type:"تجارية",
+ purpose:"مشروع تجاري",score:94,verified:true,phone:"",streetType:"شارع تجاري",
  areaDescription:"موقع مناسب للمشاريع التجارية.",
- nearbyServices:"أسواق، مطاعم، محلات، طرق رئيسية",
- map:"https://maps.google.com",
+ nearbyServices:"أسواق، مطاعم، محلات، طرق رئيسية",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80"
@@ -1651,20 +1575,10 @@ const lands = [
 },
 
 {
- id:"D004",
- wilayat:"بوشر",
- area:"العذيبة",
- price:72000,
- size:800,
- type:"سكنية",
- purpose:"بناء منزل",
- score:91,
- verified:true,
- phone:"",
- streetType:"شارع رئيسي",
+ id:"D004",wilayat:"بوشر",area:"العذيبة",price:72000,size:800,type:"سكنية",
+ purpose:"بناء منزل",score:91,verified:true,phone:"",streetType:"شارع رئيسي",
  areaDescription:"موقع سكني قريب من عدة خدمات.",
- nearbyServices:"مستشفيات، مدارس، مطاعم",
- map:"https://maps.google.com",
+ nearbyServices:"مستشفيات، مدارس، مطاعم",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80"
@@ -1672,20 +1586,10 @@ const lands = [
 },
 
 {
- id:"D005",
- wilayat:"بوشر",
- area:"الغبرة",
- price:85000,
- size:1000,
- type:"تجارية",
- purpose:"مشروع تجاري",
- score:89,
- verified:true,
- phone:"",
- streetType:"شارع تجاري",
+ id:"D005",wilayat:"بوشر",area:"الغبرة",price:85000,size:1000,type:"تجارية",
+ purpose:"مشروع تجاري",score:89,verified:true,phone:"",streetType:"شارع تجاري",
  areaDescription:"منطقة نشطة ومناسبة للاستخدام التجاري.",
- nearbyServices:"محلات، مطاعم، فنادق، خدمات",
- map:"https://maps.google.com",
+ nearbyServices:"محلات، مطاعم، فنادق، خدمات",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
@@ -1693,20 +1597,10 @@ const lands = [
 },
 
 {
- id:"D006",
- wilayat:"نزوى",
- area:"فرق",
- price:28000,
- size:1000,
- type:"زراعية",
- purpose:"زراعة",
- score:84,
- verified:true,
- phone:"",
- streetType:"شارع فرعي",
+ id:"D006",wilayat:"نزوى",area:"فرق",price:28000,size:1000,type:"زراعية",
+ purpose:"زراعة",score:84,verified:true,phone:"",streetType:"شارع فرعي",
  areaDescription:"أرض واسعة مناسبة للاستخدام الزراعي.",
- nearbyServices:"مزارع، طرق، خدمات محلية",
- map:"https://maps.google.com",
+ nearbyServices:"مزارع، طرق، خدمات محلية",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80"
@@ -1714,20 +1608,10 @@ const lands = [
 },
 
 {
- id:"D007",
- wilayat:"نزوى",
- area:"حي التراث",
- price:35000,
- size:650,
- type:"سكنية",
- purpose:"بناء منزل",
- score:87,
- verified:true,
- phone:"",
- streetType:"شارع فرعي",
+ id:"D007",wilayat:"نزوى",area:"حي التراث",price:35000,size:650,type:"سكنية",
+ purpose:"بناء منزل",score:87,verified:true,phone:"",streetType:"شارع فرعي",
  areaDescription:"موقع هادئ مناسب للسكن.",
- nearbyServices:"مدارس، مسجد، محلات",
- map:"https://maps.google.com",
+ nearbyServices:"مدارس، مسجد، محلات",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=80"
@@ -1735,20 +1619,10 @@ const lands = [
 },
 
 {
- id:"D008",
- wilayat:"صحار",
- area:"الحجرة",
- price:30000,
- size:700,
- type:"سكنية",
- purpose:"بناء منزل",
- score:86,
- verified:true,
- phone:"",
- streetType:"شارع رئيسي",
+ id:"D008",wilayat:"صحار",area:"الحجرة",price:30000,size:700,type:"سكنية",
+ purpose:"بناء منزل",score:86,verified:true,phone:"",streetType:"شارع رئيسي",
  areaDescription:"منطقة سكنية متنامية.",
- nearbyServices:"مدارس، محلات، طرق رئيسية",
- map:"https://maps.google.com",
+ nearbyServices:"مدارس، محلات، طرق رئيسية",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80"
@@ -1756,20 +1630,10 @@ const lands = [
 },
 
 {
- id:"D009",
- wilayat:"صحار",
- area:"صلان",
- price:52000,
- size:850,
- type:"تجارية",
- purpose:"مشروع تجاري",
- score:88,
- verified:true,
- phone:"",
- streetType:"شارع تجاري",
+ id:"D009",wilayat:"صحار",area:"صلان",price:52000,size:850,type:"تجارية",
+ purpose:"مشروع تجاري",score:88,verified:true,phone:"",streetType:"شارع تجاري",
  areaDescription:"موقع تجاري مناسب للمشاريع.",
- nearbyServices:"أسواق، مطاعم، خدمات",
- map:"https://maps.google.com",
+ nearbyServices:"أسواق، مطاعم، خدمات",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80"
@@ -1777,20 +1641,10 @@ const lands = [
 },
 
 {
- id:"D010",
- wilayat:"صلالة",
- area:"عوقد",
- price:40000,
- size:900,
- type:"سكنية",
- purpose:"بناء منزل",
- score:90,
- verified:true,
- phone:"",
- streetType:"شارع رئيسي",
+ id:"D010",wilayat:"صلالة",area:"عوقد",price:40000,size:900,type:"سكنية",
+ purpose:"بناء منزل",score:90,verified:true,phone:"",streetType:"شارع رئيسي",
  areaDescription:"منطقة مناسبة للعائلات وقريبة من الخدمات.",
- nearbyServices:"مدارس، أسواق، مساجد",
- map:"https://maps.google.com",
+ nearbyServices:"مدارس، أسواق، مساجد",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80"
@@ -1798,20 +1652,10 @@ const lands = [
 },
 
 {
- id:"D011",
- wilayat:"صلالة",
- area:"السعادة",
- price:60000,
- size:1100,
- type:"تجارية",
- purpose:"استثمار",
- score:93,
- verified:true,
- phone:"",
- streetType:"شارع رئيسي",
+ id:"D011",wilayat:"صلالة",area:"السعادة",price:60000,size:1100,type:"تجارية",
+ purpose:"استثمار",score:93,verified:true,phone:"",streetType:"شارع رئيسي",
  areaDescription:"مساحة جيدة مناسبة للاستثمار والمشاريع.",
- nearbyServices:"أسواق، طرق رئيسية، خدمات",
- map:"https://maps.google.com",
+ nearbyServices:"أسواق، طرق رئيسية، خدمات",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
@@ -1819,20 +1663,10 @@ const lands = [
 },
 
 {
- id:"D012",
- wilayat:"صور",
- area:"العيجة",
- price:32000,
- size:650,
- type:"سكنية",
- purpose:"بناء منزل",
- score:85,
- verified:true,
- phone:"",
- streetType:"شارع فرعي",
+ id:"D012",wilayat:"صور",area:"العيجة",price:32000,size:650,type:"سكنية",
+ purpose:"بناء منزل",score:85,verified:true,phone:"",streetType:"شارع فرعي",
  areaDescription:"منطقة هادئة وقريبة من البحر والخدمات.",
- nearbyServices:"محلات، مطاعم، طرق",
- map:"https://maps.google.com",
+ nearbyServices:"محلات، مطاعم، طرق",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=80"
@@ -1840,20 +1674,10 @@ const lands = [
 },
 
 {
- id:"D013",
- wilayat:"صور",
- area:"بلاد صور",
- price:45000,
- size:800,
- type:"تجارية",
- purpose:"استثمار",
- score:88,
- verified:true,
- phone:"",
- streetType:"شارع رئيسي",
+ id:"D013",wilayat:"صور",area:"بلاد صور",price:45000,size:800,type:"تجارية",
+ purpose:"استثمار",score:88,verified:true,phone:"",streetType:"شارع رئيسي",
  areaDescription:"موقع مناسب للاستثمار والمشاريع.",
- nearbyServices:"أسواق، مطاعم، خدمات",
- map:"https://maps.google.com",
+ nearbyServices:"أسواق، مطاعم، خدمات",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80"
@@ -1861,20 +1685,10 @@ const lands = [
 },
 
 {
- id:"D014",
- wilayat:"بركاء",
- area:"السوادي",
- price:38000,
- size:700,
- type:"سكنية",
- purpose:"بناء منزل",
- score:91,
- verified:true,
- phone:"",
- streetType:"شارع رئيسي",
+ id:"D014",wilayat:"بركاء",area:"السوادي",price:38000,size:700,type:"سكنية",
+ purpose:"بناء منزل",score:91,verified:true,phone:"",streetType:"شارع رئيسي",
  areaDescription:"منطقة سكنية مناسبة للعائلات.",
- nearbyServices:"مدارس، أسواق، خدمات",
- map:"https://maps.google.com",
+ nearbyServices:"مدارس، أسواق، خدمات",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1000&q=80"
@@ -1882,20 +1696,10 @@ const lands = [
 },
 
 {
- id:"D015",
- wilayat:"بركاء",
- area:"الرميس",
- price:26000,
- size:1200,
- type:"زراعية",
- purpose:"زراعة",
- score:82,
- verified:true,
- phone:"",
- streetType:"شارع فرعي",
+ id:"D015",wilayat:"بركاء",area:"الرميس",price:26000,size:1200,type:"زراعية",
+ purpose:"زراعة",score:82,verified:true,phone:"",streetType:"شارع فرعي",
  areaDescription:"مساحة كبيرة مناسبة للزراعة.",
- nearbyServices:"مزارع، طرق، خدمات محلية",
- map:"https://maps.google.com",
+ nearbyServices:"مزارع، طرق، خدمات محلية",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80"
@@ -1903,20 +1707,10 @@ const lands = [
 },
 
 {
- id:"D016",
- wilayat:"الرستاق",
- area:"الحوقين",
- price:22000,
- size:1500,
- type:"زراعية",
- purpose:"زراعة",
- score:80,
- verified:true,
- phone:"",
- streetType:"شارع فرعي",
+ id:"D016",wilayat:"الرستاق",area:"الحوقين",price:22000,size:1500,type:"زراعية",
+ purpose:"زراعة",score:80,verified:true,phone:"",streetType:"شارع فرعي",
  areaDescription:"أرض واسعة مناسبة للاستخدام الزراعي.",
- nearbyServices:"مزارع، طرق، خدمات",
- map:"https://maps.google.com",
+ nearbyServices:"مزارع، طرق، خدمات",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80"
@@ -1924,20 +1718,10 @@ const lands = [
 },
 
 {
- id:"D017",
- wilayat:"الرستاق",
- area:"وسط الولاية",
- price:33000,
- size:700,
- type:"سكنية",
- purpose:"بناء منزل",
- score:86,
- verified:true,
- phone:"",
- streetType:"شارع رئيسي",
+ id:"D017",wilayat:"الرستاق",area:"وسط الولاية",price:33000,size:700,type:"سكنية",
+ purpose:"بناء منزل",score:86,verified:true,phone:"",streetType:"شارع رئيسي",
  areaDescription:"موقع قريب من الخدمات الأساسية.",
- nearbyServices:"مدارس، محلات، مساجد",
- map:"https://maps.google.com",
+ nearbyServices:"مدارس، محلات، مساجد",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80"
@@ -1945,20 +1729,10 @@ const lands = [
 },
 
 {
- id:"D018",
- wilayat:"السيب",
- area:"حيل الشمالية",
- price:58000,
- size:720,
- type:"سكنية",
- purpose:"بناء منزل",
- score:93,
- verified:true,
- phone:"",
- streetType:"شارع رئيسي",
+ id:"D018",wilayat:"السيب",area:"حيل الشمالية",price:58000,size:720,type:"سكنية",
+ purpose:"بناء منزل",score:93,verified:true,phone:"",streetType:"شارع رئيسي",
  areaDescription:"موقع مميز مناسب للسكن.",
- nearbyServices:"مدارس، أسواق، طرق رئيسية",
- map:"https://maps.google.com",
+ nearbyServices:"مدارس، أسواق، طرق رئيسية",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=80"
@@ -1966,20 +1740,10 @@ const lands = [
 },
 
 {
- id:"D019",
- wilayat:"بوشر",
- area:"المسفاة",
- price:95000,
- size:1200,
- type:"تجارية",
- purpose:"استثمار",
- score:95,
- verified:true,
- phone:"",
- streetType:"شارع تجاري",
+ id:"D019",wilayat:"بوشر",area:"المسفاة",price:95000,size:1200,type:"تجارية",
+ purpose:"استثمار",score:95,verified:true,phone:"",streetType:"شارع تجاري",
  areaDescription:"مساحة كبيرة مناسبة للاستثمار والمشاريع.",
- nearbyServices:"طرق رئيسية، أسواق، خدمات",
- map:"https://maps.google.com",
+ nearbyServices:"طرق رئيسية، أسواق، خدمات",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
@@ -1987,20 +1751,10 @@ const lands = [
 },
 
 {
- id:"D020",
- wilayat:"صحار",
- area:"فلج القبائل",
- price:27000,
- size:1300,
- type:"زراعية",
- purpose:"زراعة",
- score:83,
- verified:true,
- phone:"",
- streetType:"شارع فرعي",
+ id:"D020",wilayat:"صحار",area:"فلج القبائل",price:27000,size:1300,type:"زراعية",
+ purpose:"زراعة",score:83,verified:true,phone:"",streetType:"شارع فرعي",
  areaDescription:"أرض واسعة مناسبة للزراعة.",
- nearbyServices:"مزارع، طرق، خدمات",
- map:"https://maps.google.com",
+ nearbyServices:"مزارع، طرق، خدمات",map:"https://maps.google.com",
  images:[
   "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80",
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80"
@@ -2009,37 +1763,31 @@ const lands = [
 
 ];
 
+/* STATE */
 
-/* =========================================================
-   STATE
-========================================================= */
+let visibleLands=[...lands];
 
-let visibleLands = [...lands];
+let favorites=
+  JSON.parse(localStorage.getItem("daliliFavorites")||"[]");
 
-let favorites =
-  JSON.parse(localStorage.getItem("daliliFavorites") || "[]");
+let compareList=
+  JSON.parse(localStorage.getItem("daliliCompare")||"[]");
 
-let compareList =
-  JSON.parse(localStorage.getItem("daliliCompare") || "[]");
+let pendingRequests=
+  JSON.parse(localStorage.getItem("daliliPending")||"[]");
 
-let pendingRequests =
-  JSON.parse(localStorage.getItem("daliliPending") || "[]");
+let approvedUserLands=
+  JSON.parse(localStorage.getItem("daliliApproved")||"[]");
 
-let approvedUserLands =
-  JSON.parse(localStorage.getItem("daliliApproved") || "[]");
+let allApprovedLands=[...lands,...approvedUserLands];
 
-let allApprovedLands = [...lands,...approvedUserLands];
+let currentPreferences=
+  JSON.parse(localStorage.getItem("daliliPreferences")||"null");
 
-let currentPreferences =
-  JSON.parse(localStorage.getItem("daliliPreferences") || "null");
-
-
-/* =========================================================
-   HELPERS
-========================================================= */
+/* HELPERS */
 
 function money(value){
-  return Number(value).toLocaleString("en-US") + " ر.ع";
+  return Number(value).toLocaleString("en-US")+" ر.ع";
 }
 
 function number(value){
@@ -2047,13 +1795,13 @@ function number(value){
 }
 
 function getLand(id){
-  return allApprovedLands.find(l => l.id === id);
+  return allApprovedLands.find(l=>l.id===id);
 }
 
 function getImage(land){
-  return land.images && land.images.length
-    ? land.images[0]
-    : "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80";
+  return land.images&&land.images.length
+    ?land.images[0]
+    :"https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80";
 }
 
 function showToast(message){
@@ -2075,32 +1823,21 @@ function scrollToSection(id){
 function openModal(id){
   document.getElementById(id).classList.add("show");
 
-  if(id==="favoritesModal"){
-    renderFavorites();
-  }
+  if(id==="favoritesModal") renderFavorites();
 
-  if(id==="compareModal"){
-    renderCompare();
-  }
-
-  if(id==="adminSection"){
-    renderAdmin();
-  }
+  if(id==="compareModal") renderCompare();
 }
 
 function closeModal(id){
   document.getElementById(id).classList.remove("show");
 }
 
-
-/* =========================================================
-   SMART SCORE
-========================================================= */
+/* SMART SCORE */
 
 function calculateSmartScore(land,prefs){
 
   if(!prefs){
-    return land.score || 80;
+    return land.score||80;
   }
 
   let score=0;
@@ -2138,9 +1875,10 @@ function calculateSmartScore(land,prefs){
     if(land.size>=prefs.area){
       score+=15;
     }else{
-      score+=Math.max(0,15-((
-        prefs.area-land.size
-      )/prefs.area*15));
+      score+=Math.max(
+        0,
+        15-((prefs.area-land.size)/prefs.area*15)
+      );
     }
   }
 
@@ -2152,10 +1890,7 @@ function calculateSmartScore(land,prefs){
   );
 }
 
-
-/* =========================================================
-   WHY THIS LAND
-========================================================= */
+/* WHY THIS LAND */
 
 function getReasons(land,prefs=currentPreferences){
 
@@ -2177,37 +1912,28 @@ function getReasons(land,prefs=currentPreferences){
     return reasons;
   }
 
-  if(prefs.wilayat && land.wilayat===prefs.wilayat){
+  if(prefs.wilayat&&land.wilayat===prefs.wilayat)
     reasons.push("تقع في الولاية التي اخترتها.");
-  }
 
-  if(prefs.type && land.type===prefs.type){
+  if(prefs.type&&land.type===prefs.type)
     reasons.push("نوع الأرض يطابق اختيارك.");
-  }
 
-  if(prefs.purpose && land.purpose===prefs.purpose){
+  if(prefs.purpose&&land.purpose===prefs.purpose)
     reasons.push("الاستخدام المقترح يناسب هدفك.");
-  }
 
-  if(prefs.budget && land.price<=prefs.budget){
+  if(prefs.budget&&land.price<=prefs.budget)
     reasons.push("سعر الأرض داخل ميزانيتك.");
-  }
 
-  if(prefs.area && land.size>=prefs.area){
+  if(prefs.area&&land.size>=prefs.area)
     reasons.push("مساحة الأرض تلبي المساحة التي طلبتها.");
-  }
 
-  if(!reasons.length){
+  if(!reasons.length)
     reasons.push("هذه الأرض قريبة من بعض متطلباتك.");
-  }
 
   return reasons;
 }
 
-
-/* =========================================================
-   RENDER LANDS
-========================================================= */
+/* RENDER LANDS */
 
 function renderLands(list=visibleLands){
 
@@ -2215,7 +1941,7 @@ function renderLands(list=visibleLands){
 
   grid.innerHTML="";
 
-  document.getElementById("resultsCount").textContent =
+  document.getElementById("resultsCount").textContent=
     `${list.length} أرض متاحة`;
 
   if(!list.length){
@@ -2233,10 +1959,12 @@ function renderLands(list=visibleLands){
 
   list.forEach(land=>{
 
-    const score=calculateSmartScore(land,currentPreferences);
+    const score=calculateSmartScore(
+      land,
+      currentPreferences
+    );
 
     const favorite=favorites.includes(land.id);
-
     const compare=compareList.includes(land.id);
 
     const card=document.createElement("article");
@@ -2253,15 +1981,15 @@ function renderLands(list=visibleLands){
         >
 
         <span class="image-badge">
-          ${land.verified ? "✓ موثقة" : "قيد المراجعة"}
+          ${land.verified?"✓ موثقة":"قيد المراجعة"}
         </span>
 
         <button
-          class="heart ${favorite ? "active":""}"
+          class="heart ${favorite?"active":""}"
           onclick="toggleFavorite('${land.id}')"
           title="المفضلة"
         >
-          ${favorite ? "♥":"♡"}
+          ${favorite?"♥":"♡"}
         </button>
 
       </div>
@@ -2305,7 +2033,7 @@ function renderLands(list=visibleLands){
 
           <div class="detail-item">
             <span>الطريق</span>
-            <strong>${land.streetType || "غير محدد"}</strong>
+            <strong>${land.streetType||"غير محدد"}</strong>
           </div>
 
         </div>
@@ -2332,10 +2060,10 @@ function renderLands(list=visibleLands){
           </button>
 
           <button
-            class="btn ${compare ? "btn-gold":"btn-light"}"
+            class="btn ${compare?"btn-gold":"btn-light"}"
             onclick="toggleCompare('${land.id}')"
           >
-            ${compare ? "✓ مقارنة":"⚖️ قارن"}
+            ${compare?"✓ مقارنة":"⚖️ قارن"}
           </button>
 
         </div>
@@ -2349,10 +2077,7 @@ function renderLands(list=visibleLands){
 
 }
 
-
-/* =========================================================
-   SEARCH
-========================================================= */
+/* SEARCH */
 
 function searchLands(){
 
@@ -2361,41 +2086,29 @@ function searchLands(){
   const type=document.getElementById("typeFilter").value;
   const purpose=document.getElementById("purposeFilter").value;
 
-  const minPrice=Number(document.getElementById("minPrice").value)||0;
-  const maxPrice=Number(document.getElementById("maxPrice").value)||Infinity;
+  const minPrice=
+    Number(document.getElementById("minPrice").value)||0;
 
-  const minArea=Number(document.getElementById("minArea").value)||0;
-  const maxArea=Number(document.getElementById("maxArea").value)||Infinity;
+  const maxPrice=
+    Number(document.getElementById("maxPrice").value)||Infinity;
+
+  const minArea=
+    Number(document.getElementById("minArea").value)||0;
+
+  const maxArea=
+    Number(document.getElementById("maxArea").value)||Infinity;
 
   visibleLands=allApprovedLands.filter(land=>{
 
-    return (
-
-      (!wilayat || land.wilayat===wilayat)
-
-      &&
-
-      (!area ||
-       land.area.toLowerCase().includes(area))
-
-      &&
-
-      (!type || land.type===type)
-
-      &&
-
-      (!purpose || land.purpose===purpose)
-
-      &&
-
-      land.price>=minPrice
-      && land.price<=maxPrice
-
-      &&
-
-      land.size>=minArea
-      && land.size<=maxArea
-
+    return(
+      (!wilayat||land.wilayat===wilayat)&&
+      (!area||land.area.toLowerCase().includes(area))&&
+      (!type||land.type===type)&&
+      (!purpose||land.purpose===purpose)&&
+      land.price>=minPrice&&
+      land.price<=maxPrice&&
+      land.size>=minArea&&
+      land.size<=maxArea
     );
 
   });
@@ -2404,13 +2117,9 @@ function searchLands(){
 
   document.querySelector(".results-head")
     .scrollIntoView({behavior:"smooth"});
-
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
+/* RESET */
 
 function resetFilters(){
 
@@ -2428,13 +2137,9 @@ function resetFilters(){
   visibleLands=[...allApprovedLands];
 
   renderLands();
-
 }
 
-
-/* =========================================================
-   SORT
-========================================================= */
+/* SORT */
 
 function applySort(){
 
@@ -2444,32 +2149,26 @@ function applySort(){
 
   if(type==="score"){
     list.sort((a,b)=>
-      calculateSmartScore(b,currentPreferences)
-      -
+      calculateSmartScore(b,currentPreferences)-
       calculateSmartScore(a,currentPreferences)
     );
   }
 
-  if(type==="priceLow"){
+  if(type==="priceLow")
     list.sort((a,b)=>a.price-b.price);
-  }
 
-  if(type==="priceHigh"){
+  if(type==="priceHigh")
     list.sort((a,b)=>b.price-a.price);
-  }
 
-  if(type==="areaHigh"){
+  if(type==="areaHigh")
     list.sort((a,b)=>b.size-a.size);
-  }
 
   renderLands(list);
-
 }
-
 
 function sortByMatch(){
 
-  currentPreferences = {
+  currentPreferences={
 
     wilayat:document.getElementById("wilayatFilter").value,
 
@@ -2477,34 +2176,33 @@ function sortByMatch(){
 
     purpose:document.getElementById("purposeFilter").value,
 
-    budget:Number(document.getElementById("maxPrice").value)||0,
+    budget:Number(
+      document.getElementById("maxPrice").value
+    )||0,
 
-    area:Number(document.getElementById("minArea").value)||0
+    area:Number(
+      document.getElementById("minArea").value
+    )||0
 
   };
 
   visibleLands.sort((a,b)=>
-    calculateSmartScore(b,currentPreferences)
-    -
+    calculateSmartScore(b,currentPreferences)-
     calculateSmartScore(a,currentPreferences)
   );
 
   renderLands();
 
   showToast("تم ترتيب الأراضي حسب الأقرب لمتطلباتك ⭐");
-
 }
 
-
-/* =========================================================
-   DETAILS
-========================================================= */
+/* DETAILS */
 
 function openDetails(id){
 
   const land=getLand(id);
 
-  if(!land) return;
+  if(!land)return;
 
   const score=calculateSmartScore(
     land,
@@ -2543,7 +2241,7 @@ function openDetails(id){
 
       <p>
         رقم الأرض: ${land.id}
-        ${land.verified ? " · ✓ موثقة من دليلي":""}
+        ${land.verified?" · ✓ موثقة من دليلي":""}
       </p>
 
     </div>
@@ -2594,7 +2292,7 @@ function openDetails(id){
 
       <div class="big-detail">
         <span>نوع الشارع</span>
-        <strong>${land.streetType || "غير محدد"}</strong>
+        <strong>${land.streetType||"غير محدد"}</strong>
       </div>
 
       <div class="big-detail">
@@ -2604,7 +2302,7 @@ function openDetails(id){
 
       <div class="big-detail">
         <span>الحالة</span>
-        <strong>${land.verified ? "✓ معتمدة":"قيد المراجعة"}</strong>
+        <strong>${land.verified?"✓ معتمدة":"قيد المراجعة"}</strong>
       </div>
 
     </div>
@@ -2660,7 +2358,7 @@ function openDetails(id){
       </button>
 
       ${
-        land.verified && land.phone
+        land.verified&&land.phone
         ?
         `<button
           class="btn btn-gold"
@@ -2675,13 +2373,10 @@ function openDetails(id){
       }
 
     </div>
-
   `;
 
   openModal("detailsModal");
-
 }
-
 
 function changeMainImage(src,element){
 
@@ -2691,13 +2386,9 @@ function changeMainImage(src,element){
     .forEach(t=>t.classList.remove("active"));
 
   element.classList.add("active");
-
 }
 
-
-/* =========================================================
-   FAVORITES
-========================================================= */
+/* FAVORITES */
 
 function toggleFavorite(id){
 
@@ -2723,9 +2414,7 @@ function toggleFavorite(id){
   updateCounts();
 
   renderLands();
-
 }
-
 
 function renderFavorites(){
 
@@ -2757,9 +2446,7 @@ function renderFavorites(){
         <div class="land-card">
 
           <div class="land-image">
-
             <img src="${getImage(land)}">
-
           </div>
 
           <div class="land-body">
@@ -2795,22 +2482,16 @@ function renderFavorites(){
       `).join("")}
 
     </div>
-
   `;
-
 }
 
-
-/* =========================================================
-   COMPARE
-========================================================= */
+/* COMPARE */
 
 function toggleCompare(id){
 
   if(compareList.includes(id)){
 
-    compareList=
-      compareList.filter(x=>x!==id);
+    compareList=compareList.filter(x=>x!==id);
 
     showToast("تمت إزالة الأرض من المقارنة");
 
@@ -2839,9 +2520,7 @@ function toggleCompare(id){
   renderLands();
 
   renderCompare();
-
 }
-
 
 function renderCompare(){
 
@@ -2918,16 +2597,20 @@ function renderCompare(){
 
           <tr>
             <td>درجة دليلي</td>
+
             ${selected.map(l=>
               `<td>⭐ ${calculateSmartScore(l,currentPreferences)}/100</td>`
             ).join("")}
+
           </tr>
 
           <tr>
             <td>الحالة</td>
+
             ${selected.map(l=>
               `<td>${l.verified?"✓ موثقة":"قيد المراجعة"}</td>`
             ).join("")}
+
           </tr>
 
         </tbody>
@@ -2946,11 +2629,8 @@ function renderCompare(){
       </button>
 
     </div>
-
   `;
-
 }
-
 
 function clearCompare(){
 
@@ -2966,13 +2646,9 @@ function clearCompare(){
   renderCompare();
 
   renderLands();
-
 }
 
-
-/* =========================================================
-   SMART WIZARD
-========================================================= */
+/* SMART WIZARD */
 
 function runWizard(){
 
@@ -2984,9 +2660,13 @@ function runWizard(){
 
     purpose:document.getElementById("wizPurpose").value,
 
-    budget:Number(document.getElementById("wizBudget").value)||0,
+    budget:Number(
+      document.getElementById("wizBudget").value
+    )||0,
 
-    area:Number(document.getElementById("wizArea").value)||0
+    area:Number(
+      document.getElementById("wizArea").value
+    )||0
 
   };
 
@@ -2999,14 +2679,8 @@ function runWizard(){
 
   const ranked=[...allApprovedLands]
     .map(land=>({
-
       land,
-
-      score:calculateSmartScore(
-        land,
-        prefs
-      )
-
+      score:calculateSmartScore(land,prefs)
     }))
     .sort((a,b)=>b.score-a.score)
     .slice(0,5);
@@ -3067,7 +2741,6 @@ function runWizard(){
           </button>
 
         </div>
-
       `;
 
     }).join("")}
@@ -3077,19 +2750,14 @@ function runWizard(){
   visibleLands=allApprovedLands
     .slice()
     .sort((a,b)=>
-      calculateSmartScore(b,prefs)
-      -
+      calculateSmartScore(b,prefs)-
       calculateSmartScore(a,prefs)
     );
 
   renderLands();
-
 }
 
-
-/* =========================================================
-   NOTIFICATIONS
-========================================================= */
+/* NOTIFICATIONS */
 
 function toggleNotifications(){
 
@@ -3098,35 +2766,32 @@ function toggleNotifications(){
 
   localStorage.setItem(
     "daliliNotifications",
-    enabled ? "true":"false"
+    enabled?"true":"false"
   );
 
-  if(enabled){
-
+  if(enabled)
     showToast("تم تفعيل تنبيهات الأراضي 🔔");
-
-  }else{
-
+  else
     showToast("تم إيقاف التنبيهات");
-
-  }
-
 }
-
 
 function saveNotificationPreferences(){
 
   const preferences={
 
-    wilayat:document.getElementById("notifyWilayat").value,
+    wilayat:
+      document.getElementById("notifyWilayat").value,
 
-    budget:Number(
-      document.getElementById("notifyBudget").value
-    )||0,
+    budget:
+      Number(
+        document.getElementById("notifyBudget").value
+      )||0,
 
-    type:document.getElementById("notifyType").value,
+    type:
+      document.getElementById("notifyType").value,
 
-    purpose:document.getElementById("notifyPurpose").value
+    purpose:
+      document.getElementById("notifyPurpose").value
 
   };
 
@@ -3140,18 +2805,16 @@ function saveNotificationPreferences(){
     "true"
   );
 
-  document.getElementById("notificationToggle").checked=true;
+  document.getElementById(
+    "notificationToggle"
+  ).checked=true;
 
   closeModal("notifyModal");
 
   showToast("تم حفظ تفضيلات التنبيهات 🔔");
-
 }
 
-
-/* =========================================================
-   ADD LAND
-========================================================= */
+/* ADD LAND */
 
 document.getElementById("addLandForm")
 .addEventListener("submit",function(e){
@@ -3160,34 +2823,44 @@ document.getElementById("addLandForm")
 
   const request={
 
-    id:document.getElementById("newId").value.trim(),
+    id:
+      document.getElementById("newId").value.trim(),
 
-    wilayat:document.getElementById("newWilayat").value.trim(),
+    wilayat:
+      document.getElementById("newWilayat").value.trim(),
 
-    area:document.getElementById("newAreaName").value.trim(),
+    area:
+      document.getElementById("newAreaName").value.trim(),
 
-    price:Number(
-      document.getElementById("newPrice").value
-    ),
+    price:
+      Number(
+        document.getElementById("newPrice").value
+      ),
 
-    size:Number(
-      document.getElementById("newSize").value
-    ),
+    size:
+      Number(
+        document.getElementById("newSize").value
+      ),
 
-    type:document.getElementById("newType").value,
+    type:
+      document.getElementById("newType").value,
 
-    purpose:document.getElementById("newPurpose").value,
+    purpose:
+      document.getElementById("newPurpose").value,
 
-    phone:document.getElementById("newPhone").value,
+    phone:
+      document.getElementById("newPhone").value,
 
     areaDescription:
       document.getElementById("newDescription").value
       ||
       "لم تتم إضافة وصف.",
 
-    nearbyServices:"سيتم التحقق منها من فريق دليلي.",
+    nearbyServices:
+      "سيتم التحقق منها من فريق دليلي.",
 
-    streetType:"سيتم التحقق منها.",
+    streetType:
+      "سيتم التحقق منها.",
 
     map:
       document.getElementById("newMap").value
@@ -3225,22 +2898,7 @@ document.getElementById("addLandForm")
 
 });
 
-
-/* =========================================================
-   ADMIN DEMO
-========================================================= */
-
-/*
-  مهم:
-  قسم الإدارة غير ظاهر للزوار.
-
-  للعرض التجريبي فقط:
-  افتحي الموقع ثم أضيفي #admin في نهاية الرابط.
-
-  هذا ليس نظام حماية حقيقي.
-  عند تحويل دليلي إلى نظام فعلي سنستخدم
-  تسجيل دخول وصلاحيات وقاعدة بيانات.
-*/
+/* ADMIN */
 
 function renderAdmin(){
 
@@ -3308,20 +2966,16 @@ function renderAdmin(){
       </div>
 
     `).join("");
-
 }
-
 
 function approveRequest(index){
 
   const request=pendingRequests[index];
 
-  if(!request) return;
+  if(!request)return;
 
   request.verified=true;
-
   request.status="approved";
-
   request.score=85;
 
   approvedUserLands.push(request);
@@ -3344,15 +2998,12 @@ function approveRequest(index){
   );
 
   renderAdmin();
-
   renderLands();
 
   showToast(
     "تم اعتماد الأرض وأصبحت ظاهرة للزوار ✓"
   );
-
 }
-
 
 function rejectRequest(index){
 
@@ -3368,13 +3019,9 @@ function rejectRequest(index){
   showToast(
     "تم رفض طلب الأرض"
   );
-
 }
 
-
-/* =========================================================
-   COUNTS
-========================================================= */
+/* COUNTS */
 
 function updateCounts(){
 
@@ -3383,20 +3030,11 @@ function updateCounts(){
 
   document.getElementById("compareCount")
     .textContent=compareList.length;
-
 }
 
-
-/* =========================================================
-   ADMIN ROUTE
-========================================================= */
+/* ADMIN ROUTE */
 
 function checkAdminRoute(){
-
-  /*
-    الإدارة لا تظهر للزوار.
-    تظهر فقط عند استخدام #admin للعرض التجريبي.
-  */
 
   const adminSection=
     document.getElementById("adminSection");
@@ -3416,13 +3054,9 @@ function checkAdminRoute(){
     adminSection.style.display="none";
 
   }
-
 }
 
-
-/* =========================================================
-   LOAD SAVED SETTINGS
-========================================================= */
+/* LOAD */
 
 function loadSavedSettings(){
 
@@ -3436,13 +3070,9 @@ function loadSavedSettings(){
     ).checked=true;
 
   }
-
 }
 
-
-/* =========================================================
-   INITIALIZE
-========================================================= */
+/* INITIALIZE */
 
 updateCounts();
 
@@ -3452,16 +3082,12 @@ checkAdminRoute();
 
 renderLands();
 
-
 window.addEventListener(
   "hashchange",
   checkAdminRoute
 );
 
-
-/* =========================================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
-========================================================= */
+/* CLOSE MODAL */
 
 document.querySelectorAll(".modal")
 .forEach(modal=>{
@@ -3469,15 +3095,12 @@ document.querySelectorAll(".modal")
   modal.addEventListener("click",function(e){
 
     if(e.target===modal){
-
       modal.classList.remove("show");
-
     }
 
   });
 
 });
-
 
 </script>
 
